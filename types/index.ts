@@ -3,11 +3,16 @@ import {  DefaultTheme } from 'styled-components'
 
 export interface ThemeProps extends DefaultTheme {
   theme: {
-    primary?: string,
-    secondary?: string,
-    greyLight?: string,
-    greyDark?: string,
-    black?: string,
+    primary?: string;
+    primaryLight?:string;
+    secondary?: string;
+    secondaryLight?:string;
+    tertiary?: string;
+    grey1?: string;
+    grey2?: string;
+    grey3?: string;
+    grey4?: string;
+    black?: string;
     white?: string
   }
   color?:string
@@ -18,4 +23,6 @@ export interface FlexibleComponentProps{
   color?:string;
   wide?: string;
   align?: string;
+  size?: string;
+  justify?: string;
 }

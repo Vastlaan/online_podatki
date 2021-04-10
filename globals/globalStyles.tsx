@@ -67,6 +67,6 @@ const StylesConatiner = createGlobalStyle`
         outline: none;
         box-shadow: 0 0 5px ${(p : ThemeProps) => p.theme.primary};
       }
-      color: ${(p : ThemeProps) => p.theme.greyDark}
+      color: ${(p : ThemeProps) => p.theme.grey4}
   }
 `;

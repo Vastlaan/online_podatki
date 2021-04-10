@@ -1,21 +1,35 @@
 export const lightTheme ={
-  primary: "#283845",
+  primary: "#242525",
+  primaryLight: "#2a9d8f",
+
   secondary: "#bf4545",
+  secondaryLight: "#e76f51",
 
-  greyLight: "#cfcfcf",
-  greyDark: "#4d5057",
+  tertiary: "#e9c46a",
 
-  black: "#242525",
-  white: "#ebedeb"
+  grey1: "#ebedeb",
+  grey2: "#cfcfcf",
+  grey3: "#4d5057",
+  grey4: "#242525",
+
+  black: "#000",
+  white: "#fff"
 }
 
 export const darkTheme = {
-  primary: "#283845",
+ primary: "#264653",
+  primaryLight: "#2a9d8f",
+
   secondary: "#bf4545",
+  secondaryLight: "#e76f51",
 
-  greyLight: "#cfcfcf",
-  greyDark: "#4d5057",
+  tertiary: "#e9c46a",
 
-  black: "#242525",
-  white: "#ebedeb"
+  grey1: "#ebedeb",
+  grey2: "#cfcfcf",
+  grey3: "#4d5057",
+  grey4: "#242525",
+
+  black: "#000",
+  white: "#fff"
 }

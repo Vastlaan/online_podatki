@@ -5,21 +5,31 @@ import {lightTheme, darkTheme} from './colors'
 // FONTS
 import {fonts} from './fonts'
 // CONTAINERS
-import {SectionNarrow} from './containers'
+import {MainGrid, SectionNarrow, ContainerNarrow, FlexCol, FlexRow} from './containers'
+// COMPONENTS
+import {List, ListItem, Anchor} from './components'
 // TYPOGRAPHY
-import {Heading1, Text} from './typography'  
+import {Company, Heading1, Heading3, TextItalic, Text} from './typography'
+// BUTTONS
+import {ButtonEmpty,ButtonEmptyReverse, ButtonPrimary, ButtonSecondary} from './buttons' 
+// DECORATIONS
+import {Line} from './decorations' 
 
 export {
   // MEDIA QUERIES
   respond,
   // COLORS
-  lightTheme,
-  darkTheme,
+  lightTheme, darkTheme,
   //FONTS
   fonts,
   // CONTAINERS
-  SectionNarrow,
+  MainGrid, SectionNarrow, ContainerNarrow, FlexCol, FlexRow,
+  // COMPONENTS
+  List, ListItem, Anchor,
   // TYPOGRAPHY
-  Heading1,
-  Text,
+  Company, Heading1, Heading3, Text, TextItalic,
+  // BUTTONS
+  ButtonPrimary,ButtonEmptyReverse, ButtonSecondary,ButtonEmpty,
+  // DECORATIONS
+  Line
 }
