@@ -1,13 +1,16 @@
+import {useEffect, useRef} from 'react'
 import Link from "next/link";
+import gsap from 'gsap'
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import {  withTheme } from "styled-components";
 import {
-    ContainerNarrow,
     FlexCol,
     Heading3,
     Text,
     TextItalic,
     ButtonPrimary,
     Line,
+    SectionNarrowAnimated,
 } from "../../styles";
 import {ThemeProps} from '../../types'
 
@@ -19,8 +22,22 @@ interface IntersectionProps extends ThemeProps{
 }
 
 function IntersectionComponent({ category, title, body, link, theme }: IntersectionProps) {
+
+    const container = useRef()
+
+    useEffect(()=>{
+
+        gsap.registerPlugin(ScrollTrigger)
+        gsap.fromTo(container.current,{autoAlpha: 1, y: '100'}, {autoAlpha: 1, y: 0, duration: .6, scrollTrigger: {
+                    trigger: container.current, 
+                    start: "top bottom",
+                    toggleActions: "restart none none reset",
+                }
+        })
+    },[])
+
     return (
-        <ContainerNarrow margin="9.7rem auto">
+        <SectionNarrowAnimated ref={container} margin="9.7rem auto">
             <FlexCol padding='1.4rem'>
               <TextItalic color={theme.secondary}>{category}</TextItalic>
               <Heading3 margin='0 auto 1.4rem auto' align='center'>{title}</Heading3>
@@ -34,7 +51,7 @@ function IntersectionComponent({ category, title, body, link, theme }: Intersect
                   </Link>
               )}
             </FlexCol>
-        </ContainerNarrow>
+        </SectionNarrowAnimated>
     );
 }
 

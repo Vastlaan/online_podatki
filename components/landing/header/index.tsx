@@ -43,7 +43,6 @@ export default function HeaderComponent() {
 
 const Header = styled.header`
   width: 100%;
-  min-height: 100vh;
   position: relative;
   display: inline-block;
 `

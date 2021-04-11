@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import {fonts} from './fonts'
-import {ThemeProps, FlexibleComponentProps} from '../types'
+import { FlexibleComponentProps} from '../types'
 
 export const Company = styled.h1<FlexibleComponentProps>`
   margin: ${p=>p.margin?p.margin:'0'};
@@ -18,6 +18,7 @@ export const Company = styled.h1<FlexibleComponentProps>`
 
 export const Heading1 = styled.h1<FlexibleComponentProps>`
   margin: ${(p) =>p.margin?p.margin:"0"};
+  padding: ${p=>p.padding?p.padding:'0'};
   font-family: ${fonts.heading};
   font-size: 3.3rem;
   font-weight: 500;
@@ -33,6 +34,7 @@ export const Heading1 = styled.h1<FlexibleComponentProps>`
 
 export const Heading3 = styled.h3<FlexibleComponentProps>`
   margin: ${(p) =>p.margin?p.margin:"0"};
+  padding: ${p=>p.padding?p.padding:'0'};
   font-family: ${fonts.heading};
   font-size: 2.7rem;
   font-weight: 400;
@@ -41,8 +43,19 @@ export const Heading3 = styled.h3<FlexibleComponentProps>`
   text-align: ${p=>p.align?p.align:'left'};
 `
 
+export const Heading6 = styled.h6<FlexibleComponentProps>`
+  margin: ${(p) =>p.margin?p.margin:"0"};
+  padding: ${p=>p.padding?p.padding:'0'};
+  font-family: ${fonts.heading};
+  font-size: 2.4rem;
+  font-weight: 400;
+  color: ${(p)=>p.color?p.color:p.theme.black};
+  text-align: ${p=>p.align?p.align:'left'};
+`
+
 export const Text = styled.p<FlexibleComponentProps>`
   margin: ${(p) =>p.margin?p.margin:"0"};
+  padding: ${p=>p.padding?p.padding:'0'};
   font-size: 1.6rem;
   color: ${(p)=>p.color?p.color:p.theme.grey3};
   max-width: ${(p:FlexibleComponentProps)=>p.wide?p.wide:'45rem'};
@@ -51,6 +64,7 @@ export const Text = styled.p<FlexibleComponentProps>`
 
 export const TextItalic = styled.p<FlexibleComponentProps>`
     margin: ${(p) => (p.margin ? p.margin : "0")};
+    padding: ${p=>p.padding?p.padding:'0'};
     font-size: 1.6rem;
     font-style: italic;
     font-weight: 300;

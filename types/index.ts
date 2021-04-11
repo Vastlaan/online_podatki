@@ -25,4 +25,5 @@ export interface FlexibleComponentProps{
   align?: string;
   size?: string;
   justify?: string;
+  background?: string;
 }

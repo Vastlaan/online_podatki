@@ -50,7 +50,7 @@ const CookiesStatement = styled.section`
     left: 0;
     right: 0;
     padding: 1.4rem 2.7rem;
-    background-color: ${(p: ThemeProps) => p.theme.black};
+    background-color: ${(p: ThemeProps) => p.theme.white};
     transform: translateY(100%);
     display: flex;
     align-items: center;
@@ -66,7 +66,7 @@ const CustomText = styled.p`
     font-size: 1.9rem;
     font-family: ${fonts.heading};
     font-weight: 300;
-    color: ${(p: ThemeProps) => (p.color ? p.color : p.theme.greyLight)};
+    color: ${(p: ThemeProps) => (p.color ? p.color : p.theme.grey3)};
     line-height: 1.3;
     letter-spacing: 0.15rem;
     text-align: ${(p: FlexibleComponentProps) => (p.align ? p.align : "center")};
@@ -81,10 +81,10 @@ const CustomText = styled.p`
 const ButtonSmall = styled.button<FlexibleComponentProps>`
     margin: ${(p:FlexibleComponentProps)=>p.margin?p.margin: '1.4rem'});
     padding: 0.6rem 0.9rem;
-    background-color: #04917c;
-    border: 1px solid #04917c;
+    background-color: ${p=>p.theme.primary};
+    border: 1px solid ${p=>p.theme.primary};
     font-family: ${fonts.heading};
     font-weight: 300;
-    color: ${(p:ThemeProps) => (p.color ? p.color : p.theme.greyLight)};
+    color: ${(p:ThemeProps) => (p.color ? p.color : p.theme.grey1)};
     letter-spacing: 0.15rem;
 `;

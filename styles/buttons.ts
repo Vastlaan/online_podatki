@@ -17,6 +17,7 @@ export const ButtonPrimary = styled.button<FlexibleComponentProps>`
     display: flex;
     align-items: center;
     justify-content: center;
+    width: ${(p)=>p.wide?p.wide:'auto'};
     svg {
         margin-right: 1.4rem;
         font-size: 2.2rem;
@@ -50,6 +51,7 @@ export const ButtonSecondary = styled.button<FlexibleComponentProps>`
     letter-spacing: .15rem;
     color: ${(p) => p.theme.white};
     overflow: hidden;
+    width: ${(p)=>p.wide?p.wide:'auto'};
     &::after {
         content: "";
         position: absolute;

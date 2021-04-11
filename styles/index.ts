@@ -5,11 +5,11 @@ import {lightTheme, darkTheme} from './colors'
 // FONTS
 import {fonts} from './fonts'
 // CONTAINERS
-import {MainGrid, SectionNarrow, ContainerNarrow, FlexCol, FlexRow} from './containers'
+import {MainGrid,SectionWide, SectionNarrow,SectionNarrowAnimated, ContainerNarrow,ContainerAnimated, FlexCol, FlexRow} from './containers'
 // COMPONENTS
 import {List, ListItem, Anchor} from './components'
 // TYPOGRAPHY
-import {Company, Heading1, Heading3, TextItalic, Text} from './typography'
+import {Company, Heading1, Heading3,Heading6, TextItalic, Text} from './typography'
 // BUTTONS
 import {ButtonEmpty,ButtonEmptyReverse, ButtonPrimary, ButtonSecondary} from './buttons' 
 // DECORATIONS
@@ -23,11 +23,11 @@ export {
   //FONTS
   fonts,
   // CONTAINERS
-  MainGrid, SectionNarrow, ContainerNarrow, FlexCol, FlexRow,
+  MainGrid,SectionWide, SectionNarrow,SectionNarrowAnimated, ContainerNarrow,ContainerAnimated, FlexCol, FlexRow,
   // COMPONENTS
   List, ListItem, Anchor,
   // TYPOGRAPHY
-  Company, Heading1, Heading3, Text, TextItalic,
+  Company, Heading1, Heading3,Heading6, Text, TextItalic,
   // BUTTONS
   ButtonPrimary,ButtonEmptyReverse, ButtonSecondary,ButtonEmpty,
   // DECORATIONS
