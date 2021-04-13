@@ -1,9 +1,11 @@
 import {  DefaultTheme } from 'styled-components'
 
 
+
 export interface ThemeProps extends DefaultTheme {
   theme: {
     primary?: string;
+    primaryDark?:string;
     primaryLight?:string;
     secondary?: string;
     secondaryLight?:string;
@@ -18,6 +20,7 @@ export interface ThemeProps extends DefaultTheme {
   color?:string
 }
 export interface FlexibleComponentProps{
+  
   padding?: string;
   margin?: string;
   color?:string;
@@ -26,4 +29,9 @@ export interface FlexibleComponentProps{
   size?: string;
   justify?: string;
   background?: string;
+  url?: string;
+}
+
+export interface ListItemProps{
+  active?: boolean
 }

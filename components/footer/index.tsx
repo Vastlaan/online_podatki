@@ -1,34 +1,36 @@
+import Image from 'next/image'
 import styled from "styled-components";
 import Links from "./links";
 import Copyright from "./copyright";
-import { FlexRow, Company } from "../../styles";
+import { respond, ContainerNarrow, FlexRow } from "../../styles";
 
 export default function FooterComponent() {
     return (
         <Footer>
-            <FlexRow justify='space-between'>
+            <ContainerNarrow>
                 <Logo>
-                    <img src="/img/logo.svg" alt="logo"/>
+                    <Image src="/img/logo_white.png" alt="logo" width='220' height='80'/>
                 </Logo>
-                <Company color="white" margin='0 auto 0 0'><span>B</span>oekhoud</Company>
-            </FlexRow>
-
-            <Links />
-
-            <Copyright />
+                <Links/>
+                <Copyright />
+            </ContainerNarrow>
         </Footer>
     );
 }
 
 const Footer = styled.footer`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: ${(p) => p.theme.primary};
-    padding: 2.7rem 1.4rem;
+    padding: 2.7rem 0;
+    background-color: ${(p) => p.theme.primaryDark};
+    ${() => respond("l", "padding: 4.7rem; padding-bottom: 0;")}
 `;
 const Logo = styled.div`
+  margin: 0 auto;
   display: flex;
-  aling-items: center;
+  align-items: center;
+  padding: .9rem;
+  position: relative;
+  width: 22rem;
+  height: 8rem;
+  z-index: 99;
+  cursor: pointer;
 `

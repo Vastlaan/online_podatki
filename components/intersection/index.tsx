@@ -1,27 +1,33 @@
 import {useEffect, useRef} from 'react'
+import styled from 'styled-components'
 import Link from "next/link";
 import gsap from 'gsap'
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import {  withTheme } from "styled-components";
 import {
+    respond,
     FlexCol,
+    FlexRow,
     Heading3,
     Text,
     TextItalic,
     ButtonPrimary,
     Line,
+    Icon,
     SectionNarrowAnimated,
 } from "../../styles";
 import {ThemeProps} from '../../types'
+import {RiMoneyEuroCircleLine} from 'react-icons/ri'
 
 interface IntersectionProps extends ThemeProps{
   category: string;
   title: string;
   body: string;
   link?: string;
+  margin?:string;
 }
 
-function IntersectionComponent({ category, title, body, link, theme }: IntersectionProps) {
+function IntersectionComponent({ category, title, body, link, margin, theme }: IntersectionProps) {
 
     const container = useRef()
 
@@ -37,12 +43,20 @@ function IntersectionComponent({ category, title, body, link, theme }: Intersect
     },[])
 
     return (
-        <SectionNarrowAnimated ref={container} margin="9.7rem auto">
+        <SectionNarrowAnimated ref={container} margin={margin?margin:"6.7rem auto"}>
             <FlexCol padding='1.4rem'>
-              <TextItalic color={theme.secondary}>{category}</TextItalic>
+              <TextItalic color={theme.primaryLight}>{category}</TextItalic>
               <Heading3 margin='0 auto 1.4rem auto' align='center'>{title}</Heading3>
-              <Line wide='15rem' color={theme.secondary}/>
-              <Text color={theme.grey3} margin=' 1.4rem auto'>{body}</Text>
+
+              <Lines>
+                <Line wide='40%' color={theme.primaryDark}/>
+                <Icon margin='0 1.4rem'>
+                    <RiMoneyEuroCircleLine/>
+                </Icon>
+                <Line wide='40%' color={theme.primaryDark}/>
+              </Lines>
+              
+              <Text color={theme.grey3} wide='65rem' margin=' 1.4rem auto'>{body}</Text>
               {link && (
                   <Link href={link}>
                       <ButtonPrimary margin="1.4rem auto">
@@ -56,3 +70,12 @@ function IntersectionComponent({ category, title, body, link, theme }: Intersect
 }
 
 export default withTheme(IntersectionComponent);
+
+const Lines = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38rem;
+
+    ${()=>respond('m','width: 65rem;')}
+`

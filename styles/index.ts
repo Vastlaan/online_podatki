@@ -5,15 +5,15 @@ import {lightTheme, darkTheme} from './colors'
 // FONTS
 import {fonts} from './fonts'
 // CONTAINERS
-import {MainGrid,SectionWide, SectionNarrow,SectionNarrowAnimated, ContainerNarrow,ContainerAnimated, FlexCol, FlexRow} from './containers'
+import {MainGrid, BilboardContainer, SectionWide, SectionNarrow,SectionNarrowAnimated, ContainerNarrow,ContainerAnimated, FlexCol, FlexRow} from './containers'
 // COMPONENTS
-import {List, ListItem, Anchor} from './components'
+import {List, Item, ListItem, Anchor} from './components'
 // TYPOGRAPHY
-import {Company, Heading1, Heading3,Heading6, TextItalic, Text} from './typography'
+import {Company,HeadingHuge, Heading1, Heading3,Heading6, TextItalic, Text} from './typography'
 // BUTTONS
-import {ButtonEmpty,ButtonEmptyReverse, ButtonPrimary, ButtonSecondary} from './buttons' 
+import {ButtonEmpty,ButtonEmptyReverse,ButtonEmptyReverseDark, ButtonPrimary, ButtonSecondary} from './buttons' 
 // DECORATIONS
-import {Line} from './decorations' 
+import {Line, Icon} from './decorations' 
 
 export {
   // MEDIA QUERIES
@@ -23,13 +23,13 @@ export {
   //FONTS
   fonts,
   // CONTAINERS
-  MainGrid,SectionWide, SectionNarrow,SectionNarrowAnimated, ContainerNarrow,ContainerAnimated, FlexCol, FlexRow,
+  MainGrid,BilboardContainer, SectionWide, SectionNarrow,SectionNarrowAnimated, ContainerNarrow,ContainerAnimated, FlexCol, FlexRow,
   // COMPONENTS
-  List, ListItem, Anchor,
+  List,Item, ListItem, Anchor,
   // TYPOGRAPHY
-  Company, Heading1, Heading3,Heading6, Text, TextItalic,
+  Company,HeadingHuge,  Heading1, Heading3,Heading6, Text, TextItalic,
   // BUTTONS
-  ButtonPrimary,ButtonEmptyReverse, ButtonSecondary,ButtonEmpty,
+  ButtonPrimary,ButtonEmptyReverse,ButtonEmptyReverseDark, ButtonSecondary,ButtonEmpty,
   // DECORATIONS
-  Line
+  Line, Icon
 }

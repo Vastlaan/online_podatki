@@ -1,0 +1,1 @@
+export const data = {copyright: " Alle rechten voorbehouden."}
