@@ -35,7 +35,7 @@ export default function LinksComponent({isOpen}:LinksProps) {
         <Link href='/'>
         <ListItem active={isActive('/do_pobrania')}>Do pobrania</ListItem>
         </Link>
-        <Link href='/'>
+        <Link href='/contact'>
           <ButtonSecondary>
             Kontakt
           </ButtonSecondary>

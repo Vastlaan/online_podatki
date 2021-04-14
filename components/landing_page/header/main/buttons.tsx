@@ -7,7 +7,7 @@ export default function ButtonsComponent() {
       <Link href='/'>
         <ButtonPrimary margin='0 1.4rem 0 0'>Usługi</ButtonPrimary>
       </Link>
-      <Link href='/'>
+      <Link href='/contact'>
         <ButtonSecondary>Kontakt</ButtonSecondary>
       </Link>
     </FlexRow>

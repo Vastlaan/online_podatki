@@ -19,11 +19,12 @@ export default function BoxComponent({delay, icon, heading, text, background}:Bo
 
   useEffect(()=>{
     gsap.registerPlugin(ScrollTrigger)
-    gsap.to(target.current, {opacity: 1, visibility: 'visible', y:0, duration: 1, delay: delay,  scrollTrigger: {
-        trigger: target.current, 
-        start: "top 90%",
-        toggleActions: "restart none none reset",
-    }})
+    const anim = gsap.to(target.current, {autoAlpha: 1, y:0, duration: 1, delay: delay});
+    ScrollTrigger.create({
+      trigger: target.current, 
+      start: "top 90%",
+      onEnter: () => anim.restart(true)
+    });
   },[])
 
   return (

@@ -14,7 +14,38 @@ export const MainGrid = styled.div`
   ${()=>respond('l', 'grid-template-columns: 65rem 1fr;')}
 `
 
+export const Grid = styled.div`
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 1.4rem;
+  grid-gap: 1.4rem;
+  ${()=>respond('m', 'grid-template-columns: 1fr 1fr;')}
+`
+
 // SECTIONS AND HEADERS
+
+export const Header = styled.header<FlexibleComponentProps>`
+    padding: 2.7rem 0;
+    padding-top: 12rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    min-height: 30vh;
+    background-image: linear-gradient(
+            to bottom,
+            rgba(52, 104, 151, 0.9),
+            rgba(52, 104, 151, 0.6)
+        ),
+        url(${(p) => (p.url ? p.url : "./img/header-3.jpg")});
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    visibility: hidden;
+    ${() => respond("m", `padding-top: 9.7rem; min-height: 50vh`)}
+`;
 
 export const SectionWide = styled.section<FlexibleComponentProps>`
   width: 100%;
@@ -103,3 +134,21 @@ export const BilboardContainer = styled.section<FlexibleComponentProps>`
     align-items: center;
     overflow: hidden;
 `;
+
+export const ContactBox = styled.div`
+  width: 25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 2.7rem 2.7rem 2.7rem;
+  padding: 1.4rem;
+  background-color: rgba(70, 141, 204,.1);
+  border-radius: 1rem;
+  transition: all .3s;
+  cursor: pointer;
+  box-shadow: 0 0 1rem rgba(0, 0, 0,.5);
+
+  &:hover{
+    background-color: rgba(70, 141, 204,.2);
+  }
+`

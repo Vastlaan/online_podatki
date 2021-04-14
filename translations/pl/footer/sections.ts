@@ -40,7 +40,7 @@ export const data = [
                 
                 {
                     name: "Kontakt",
-                    url: "/",
+                    url: "/contact",
                 },
                 {
                     name: "Pliki cookie",

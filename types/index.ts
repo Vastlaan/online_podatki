@@ -30,8 +30,15 @@ export interface FlexibleComponentProps{
   justify?: string;
   background?: string;
   url?: string;
+  minHeight?:string;
 }
 
 export interface ListItemProps{
   active?: boolean
+}
+
+export interface ErrorObject{
+  type: string;
+  field: string;
+  message: string;
 }

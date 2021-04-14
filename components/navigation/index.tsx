@@ -69,7 +69,7 @@ const Navigation = styled.nav<NavigationProps>`
   right: 0;
   display: flex;
   flex-direction: column;
-  z-index: 99;
+  z-index: 100;
   transition: all .3;
   background-color: ${p=>p.background?p.theme.primaryDark:'transparent'};
   //background-image: linear-gradient(to bottom, rgba(70, 141, 204, .9), rgba(70, 141, 204, .3) );

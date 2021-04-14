@@ -33,7 +33,8 @@ export const Item = styled.li<FlexibleComponentProps>`
     }
 `
 
-export const Anchor = styled.a`
+export const Anchor = styled.a<FlexibleComponentProps>`
+  margin: ${p=>p.margin?p.margin:'0'};
   font-size: 1.6rem;
   color: ${p=>p.theme.white};
   transition: all .3s;
@@ -47,7 +48,7 @@ export const Anchor = styled.a`
   }
 
   &:hover{
-    color: ${p=>p.theme.secondaryLight};
+    color: ${p=>p.theme.secondaryLight} !important;
   }
 `
 
@@ -97,3 +98,40 @@ export const ListItem = styled.li<ListItemProps>`
     }
   }
 `
+
+export const Field = styled.div`
+    width: 100%;
+    max-width: 65rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 1.4rem 0;
+
+    label {
+        color: ${(p) => p.theme.grey4};
+        font-size: 1.9rem;
+        margin-bottom: 0.9rem;
+    }
+    input,
+    textarea {
+        width: 100%;
+        max-width:65rem;
+        border: none;
+        border: 1px solid rgba(0,0,0,.3);
+        padding: 0.9rem 1.4rem;
+        font-size: 1.6rem;
+        color: ${(p) => p.theme.grey3};
+    }
+    p {
+        font-size: 1.4rem;
+        color: ${(p) => p.theme.grey4};
+    }
+    small {
+        font-size: 1rem;
+        margin: 0.6rem 0;
+        color: orangered;
+    }
+    span {
+        color: ${(p) => p.theme.secondary};
+    }
+`;

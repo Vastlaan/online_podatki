@@ -25,9 +25,11 @@ export const HeadingHuge = styled.h1<FlexibleComponentProps>`
     line-height: 1.3;
     text-transform: uppercase;
     text-align: ${(p) => (p.align ? p.align : "center")};
-    max-width: 95rem;
+    text-shadow: .2rem .3rem .3rem rgba(0,0,0,.3);
+    max-width: ${(p)=>p.wide?p.wide:'95rem'};
     letter-spacing: 0.2rem;
     ${() => respond("s", "font-size: 4.7rem;")}
+    ${(p)=>respond('l',`max-width:${p.wide?p.wide:'95rem'}; `)}
     span {
         color: ${(p) => p.theme.secondaryLight};
     }
@@ -61,6 +63,28 @@ export const Heading3 = styled.h3<FlexibleComponentProps>`
   color: ${(p)=>p.color?p.color:p.theme.black};
   text-align: ${p=>p.align?p.align:'left'};
 `
+export const Heading4 = styled.h3<FlexibleComponentProps>`
+  margin: ${(p) =>p.margin?p.margin:"0"};
+  padding: ${p=>p.padding?p.padding:'0'};
+  font-family: ${fonts.heading};
+  font-size: 2.2rem;
+  font-weight: 600;
+  
+  color: ${(p)=>p.color?p.color:p.theme.grey4};
+  text-align: ${p=>p.align?p.align:'left'};
+  position: relative;
+
+  &::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -1.4rem;
+    height: 100%;
+    width: 5px;
+    background-color: ${p=>p.theme.primaryDark};
+
+  }
+`
 
 export const Heading6 = styled.h6<FlexibleComponentProps>`
   margin: ${(p) =>p.margin?p.margin:"0"};
@@ -77,12 +101,27 @@ export const Text = styled.p<FlexibleComponentProps>`
   padding: ${p=>p.padding?p.padding:'0'};
   font-size: 1.8rem;
   color: ${(p)=>p.color?p.color:p.theme.grey3};
-  max-width: ${(p:FlexibleComponentProps)=>p.wide?p.wide:'45rem'};
+  max-width: ${(p)=>p.wide?p.wide:'45rem'};
   text-align: ${p=>p.align?p.align:'center'};
 
   span{
     text-decoration: underline;
   }
+`
+
+export const Text3 = styled.p`
+    margin: .6rem 0;
+    display: inline-block;
+    font-size: 1.9rem;
+    font-family: ${fonts.heading};
+    color: ${p=>p.theme.black};
+
+    ${()=>respond('m','margin: .3rem 0;')}
+
+    span{
+        color:${p=>p.theme.secondaryLight};
+        font-weight: 600;
+    }
 `
 
 export const TextItalic = styled.p<FlexibleComponentProps>`

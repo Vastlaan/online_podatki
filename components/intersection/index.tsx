@@ -17,7 +17,8 @@ import {
     SectionNarrowAnimated,
 } from "../../styles";
 import {ThemeProps} from '../../types'
-import {RiMoneyEuroCircleLine} from 'react-icons/ri'
+import {IconType} from 'react-icons'
+
 
 interface IntersectionProps extends ThemeProps{
   category: string;
@@ -25,9 +26,10 @@ interface IntersectionProps extends ThemeProps{
   body: string;
   link?: string;
   margin?:string;
+  icon?: JSX.Element
 }
 
-function IntersectionComponent({ category, title, body, link, margin, theme }: IntersectionProps) {
+function IntersectionComponent({ category, title, body, link, margin, icon, theme }: IntersectionProps) {
 
     const container = useRef()
 
@@ -51,7 +53,7 @@ function IntersectionComponent({ category, title, body, link, margin, theme }: I
               <Lines>
                 <Line wide='40%' color={theme.primaryDark}/>
                 <Icon margin='0 1.4rem'>
-                    <RiMoneyEuroCircleLine/>
+                    {icon}
                 </Icon>
                 <Line wide='40%' color={theme.primaryDark}/>
               </Lines>

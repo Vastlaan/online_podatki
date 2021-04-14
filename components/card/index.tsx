@@ -1,3 +1,6 @@
+import {useEffect, useRef} from 'react'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import styled from 'styled-components'
 import {fonts, FlexCol, Heading3, Text, ButtonSecondary} from '../../styles'
 import {IoIosArrowRoundForward} from 'react-icons/io'
@@ -10,8 +13,20 @@ interface CardProps{
 }
 
 export default function CardComponent({heading, price, text}:CardProps) {
+
+  const target = useRef()
+
+  useEffect(()=>{
+    gsap.registerPlugin(ScrollTrigger)
+    gsap.to(target.current, {autoAlpha: 1, duration:1, scrollTrigger:{
+      trigger: target.current, 
+      start: "top 80%",
+      toggleActions: "restart none none reset",
+    } })
+  },[])
+
   return (
-    <Card>
+    <Card ref={target}>
       <Heading3 padding='1.4rem'>{heading}</Heading3>
       
       <Price><sub>od</sub>&nbsp; <p>&euro;{price}</p>&nbsp; <sup> brutto</sup></Price>
@@ -32,6 +47,8 @@ const Card = styled.div`
   margin: 1.4rem;
   background-color: white;
   box-shadow: 0 0 1rem rgba(0,0,0,.3);
+  opacity: 0;
+  visibility: hidden;
 `
 
 const Price = styled.div`
