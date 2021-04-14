@@ -133,6 +133,8 @@ export const BilboardContainer = styled.section<FlexibleComponentProps>`
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
 `;
 
 export const ContactBox = styled.div`

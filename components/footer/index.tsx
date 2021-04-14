@@ -8,9 +8,9 @@ export default function FooterComponent() {
     return (
         <Footer>
             <ContainerNarrow>
-                <Logo>
+                {/* <Logo>
                     <Image src="/img/logo_white.png" alt="logo" width='220' height='80'/>
-                </Logo>
+                </Logo> */}
                 <Links/>
                 <Copyright />
             </ContainerNarrow>
@@ -21,7 +21,7 @@ export default function FooterComponent() {
 const Footer = styled.footer`
     padding: 2.7rem 0;
     background-color: ${(p) => p.theme.primaryDark};
-    ${() => respond("l", "padding: 4.7rem; padding-bottom: 0;")}
+    ${() => respond("l", "padding: 0.7rem; padding-bottom: 0;")}
 `;
 const Logo = styled.div`
   margin: 0 auto;

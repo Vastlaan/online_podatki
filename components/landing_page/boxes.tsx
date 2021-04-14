@@ -19,13 +19,13 @@ export default function BoxesComopnent() {
             heading='Oszczędność czasu' 
             text='Jako przedsiębiorca chcesz robić to, w czym jesteś dobry in na czym zarabiasz. Księgowość to nie Twoja sprawa. Poświęcając jedynie kilka minut na kontakt z nami, możesz być pewien, że Twoja księgowość będzie prowadzona skrupulatnie i należycie.'/>
           <InfoBox
-            delay={.5}
+            delay={.25}
             icon={<AiOutlineBarChart/>} 
             background='rgba(70, 141, 204, .3)'
             heading='Efektywność' 
             text='Dla naszych klientów uzyskujemy zawsze najwyższe świadczenia. Doradzamy firmom i klientom indywidualnym, jak korzystać z ulg podatkowych, aby zachować jak najlepszą kondycję finansową. Nie trać czasu, powierz sprawy specjalistom.'/>
           <InfoBox
-            delay={1}
+            delay={.5}
             icon={<IoRocketOutline/>} 
             heading='Szybkość działania' 
             text='Twoje sprawy są naszym pryiorytetem! Podejmujemy natychmiastowe działania, i reagujemy w sposób błyskawiczny, za każdym razem, kiedy nas potrzebujesz. Dzięki temu nie martwisz się niczym.'/>

@@ -1,9 +1,10 @@
 import Link from "next/link";
 import styled from "styled-components";
-import { respond, fonts, Heading6, Item, Anchor, Line } from "../../styles";
+import { respond, fonts, Heading6, Anchor, Line } from "../../styles";
 import {BsChevronRight} from 'react-icons/bs'
 import { data } from "../../translations/pl/footer/sections";
 import {MdEmail, MdPhone} from 'react-icons/md'
+import {RiMapPinFill} from 'react-icons/ri'
 
 interface LinksProps{
     data: {header?: string; links: {name?: string; url?: string}}[];
@@ -15,7 +16,7 @@ export default function LinksComponent() {
             {data.map((section, i) => {
                 return (
                     <Items key={`${section}-${i}}`}>
-                        <Heading6 align='center' color='white'  margin='0 0 1.4rem 0'>{section.header}</Heading6>
+                        <Heading6 align='left' color='white'  margin='0 0 1.4rem 0'>{section.header}</Heading6>
 
                         {section.links.map((link, i) => {
                             return (
@@ -23,7 +24,7 @@ export default function LinksComponent() {
                                     key={`${link.name}-${i}}`}
                                     href={`${link.url}`}
                                 >
-                                    <Item color='white' margin='.9rem 0'> <BsChevronRight/>{link.name}</Item>
+                                    <Item> <BsChevronRight/>{link.name}</Item>
                                 </Link>
                             );
                         })}
@@ -31,21 +32,31 @@ export default function LinksComponent() {
                 );
             })}
             <Items>
-                <Heading6 align='center' color='white' margin='0 0 1.4rem 0'>Kontakt</Heading6>
-                <Field>Online <span>Podatki</span></Field>
-                <Field>Lakenblekerstraat 24D</Field>
-                <Field>1431GG Aalsmeer</Field>
-                <Anchor margin='.3rem 0 .3rem 0' href="tel:0031630159193">
-                    <MdPhone/>
-                    <Field>+31 630 159 193</Field>
+                <Heading6 align='left' color='white' margin='0 0 1.4rem 0'>Kontakt</Heading6>
+
+                <Item>
+                    <RiMapPinFill/>
+                    Lakenblekerstraat 24, 1431GG Aalsmeer
+                </Item>
+                
+                <Anchor href="tel:0031630159193">
+                    <Item>
+                        <MdPhone/>
+                        +31 630 159 193
+                    </Item>
                 </Anchor>
-                <Anchor margin='.3rem 0 .3rem 0' href="tel:0048500424583">
-                    <MdPhone/>
-                    <Field>+48 500 424 583</Field>
+                <Anchor href="tel:0031630159193">
+                    <Item>
+                        <MdPhone/>
+                        +48 500 424 583
+                    </Item>
                 </Anchor>
-                <Anchor margin='.3rem 0 .3rem 0' href="mailto:info@onlinepodatki.eu">
-                    <MdEmail/>
-                    <Field>info@onlinepodatki.eu</Field>
+                
+                <Anchor href="mailto:info@onlinepodatki.eu">
+                    <Item>
+                        <MdEmail/>
+                        info@onlinepodatki.eu
+                    </Item>
                 </Anchor>
             </Items>
         </Links>
@@ -60,17 +71,41 @@ const Links = styled.div`
     ${() =>
         respond(
             "m",
-            "padding: 2.7rem; flex-direction: row; justify-content: space-between;"
+            "padding: 0 1.4rem; flex-direction: row; justify-content: space-between;"
         )}
 `;
 const Items = styled.div`
     display: flex;
     flex-direction: column;
     margin: 1.4rem;
-    padding: 1.4rem;
-    min-width: 25rem;
-    ${() => respond("m", "margin: 2.7rem 0;border-right: 1px solid rgba(0,0,0,.15);")}
+    
+    ${() => respond("m", "margin: 2.7rem 0; min-width: 25rem;")}
 `;
+
+const Item = styled.li`
+    font-size: 1.6rem;
+    color: ${p=>p.theme.white};
+    transition: all .3s;
+    display: flex;
+    align-items: center;
+    margin:  0;
+    padding: .9rem;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(255,255,255,.3);
+
+    &:hover{
+        svg{
+            transform: translateX(.5rem);
+        }    
+    }
+
+    svg{
+      font-size: 2.2rem;
+      color: ${p=>p.theme.white};
+      margin-right: .9rem;
+      transition: all .3s;
+    }
+`
 
 const Field = styled.p`
     margin: .6rem 0;

@@ -31,7 +31,7 @@ export const data = [
             links: [
                 {
                     name: "Do pobrania",
-                    url: "/",
+                    url: "/downloads",
                 },
                 {
                     name: "Aktualności",
