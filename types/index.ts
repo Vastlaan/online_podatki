@@ -31,6 +31,7 @@ export interface FlexibleComponentProps{
   background?: string;
   url?: string;
   minHeight?:string;
+  wrap?:string;
 }
 
 export interface ListItemProps{

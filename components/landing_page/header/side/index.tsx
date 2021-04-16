@@ -22,16 +22,16 @@ export default function SideComponent() {
         </Heading3>
 
         <List margin='1.4rem 0'>
-          <Link href='/'>
+          <Link href='/services/taxes'>
             <Item color='white' margin='.9rem 0'> <BsChevronRight/> Rozliczenia Podatkowe</Item>
           </Link>
-          <Link href='/'>
-            <Item color='white' margin='.9rem 0'> <BsChevronRight/> Administracja</Item>
+          <Link href='/services/administration'>
+            <Item color='white' margin='.9rem 0'> <BsChevronRight/> Administracja firm</Item>
           </Link>
-          <Link href='/'>
+          <Link href='/services/benefits'>
             <Item color='white' margin='.9rem 0'> <BsChevronRight/> Pozyskiwanie zasiłków</Item>
           </Link>
-          <Link href='/'>
+          <Link href='/services/subsidies'>
             <Item color='white' margin='.9rem 0'> <BsChevronRight/> Pozyskiwanie dotacji</Item>
           </Link>
         </List>

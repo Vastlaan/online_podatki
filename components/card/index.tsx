@@ -1,4 +1,5 @@
 import {useEffect, useRef} from 'react'
+import Link from 'next/link'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import styled from 'styled-components'
@@ -7,12 +8,13 @@ import {IoIosArrowRoundForward} from 'react-icons/io'
 
 
 interface CardProps{
+  link: string;
   heading: string;
   price: string;
   text: string;
 }
 
-export default function CardComponent({heading, price, text}:CardProps) {
+export default function CardComponent({heading, price, text, link}:CardProps) {
 
   const target = useRef()
 
@@ -31,8 +33,10 @@ export default function CardComponent({heading, price, text}:CardProps) {
       
       <Price><sub>od</sub>&nbsp; <p>&euro;{price}</p>&nbsp; <sup> brutto</sup></Price>
       <Text padding='1.4rem'>{text}</Text>
-
-      <ButtonSecondary wide='100%'>Więcej <IoIosArrowRoundForward /></ButtonSecondary>
+      <Link href={link}>
+        <ButtonSecondary wide='100%'>Więcej <IoIosArrowRoundForward /></ButtonSecondary>
+      </Link>
+      
     </Card>
   )
 }

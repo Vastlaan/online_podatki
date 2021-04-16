@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react';
 import styled from 'styled-components'
-import { respond,} from '../../../styles'
+import { respond} from '../../../styles'
 
 
 interface VideoProps{
@@ -45,21 +45,26 @@ export default function BackgroundEffectsComponent() {
 }
 const BackgroundEffects = styled.div`
   width: 100%;
-  height:85vh;
+  height:95vh;
   position: absolute;
   overflow:hidden;
   display: inline-block;
   z-index: -1;
+
+  ${()=>respond('xxl','height: 85vh;')}
 `
 
 const Gradients = styled.div`
     width: 100%;
-    height: 75vh;
+    height: 80vh;
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     display: inline-block;
+
+    ${()=>respond('xxl','height: 75vh;')}
+
     &::after {
         content: "";
         position: absolute;
@@ -67,7 +72,7 @@ const Gradients = styled.div`
         left: 0;
         right: 0;
         bottom: 0;
-        background-image: linear-gradient(to bottom, rgba(70, 141, 204, .1) 10%, rgba(70, 141, 204, 0.6) );
+        background-image: linear-gradient(to bottom, rgba(70, 141, 204, .1) 10%, rgba(70, 141, 204, 0.4) );
         transform: rotate(3deg) scale(1.1);
         z-index: 0;
     }
@@ -78,7 +83,7 @@ const Gradients = styled.div`
         left: 0;
         right: 0;
         bottom: 0;
-        background-image: linear-gradient(to bottom, rgba(70, 141, 204, .3) 10%, rgba(70, 141, 204, 0.6) );
+        background-image: linear-gradient(to bottom, rgba(70, 141, 204, .3) 10%, rgba(70, 141, 204, 0.5) );
         transform: rotate(1deg) scale(1.05);
         z-index: 0;
     }

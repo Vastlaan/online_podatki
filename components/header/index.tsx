@@ -27,7 +27,7 @@ export default function HeaderComponent({ title, body, imageUrl }:HeaderProps) {
     },[])
 
     return (
-        <Header minHeight="50vh" url={imageUrl ? imageUrl : undefined} ref={target}>
+        <Header minHeight="45vh" url={imageUrl ? imageUrl : undefined} ref={target}>
             <ContainerNarrow>
 
                 <FlexCol margin='0 2.7rem'>
@@ -44,7 +44,7 @@ export default function HeaderComponent({ title, body, imageUrl }:HeaderProps) {
                         </HeadingHuge>
                     </FlexCol>
                     
-                    <Text color='white'>{body}</Text>
+                    <Text color='white' wide='55rem'>{body}</Text>
                 </FlexCol>
                 
             </ContainerNarrow>

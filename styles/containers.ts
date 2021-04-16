@@ -102,6 +102,7 @@ export const FlexRow = styled.div<FlexibleComponentProps>`
   align-items: ${p=>p.align?p.align:'center'};
   background-color: ${p=>p.background?p.background:'transparent'};
   max-width: ${p=>p.wide?p.wide: 'auto'};
+  flex-wrap: ${p=>p.wrap?p.wrap:'no-wrap'};
 `
 export const FlexCol = styled.div<FlexibleComponentProps>`
   display:flex;

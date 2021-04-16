@@ -42,10 +42,12 @@ export default function HeaderComponent() {
 
 const Header = styled.header`
   width: 100%;
-  min-height: 85vh;
+  min-height: 95vh;
   overflow:hidden;
   display: inline-block;
   position: relative;
+
+  ${()=>respond('xxl','min-height: 85vh;')}
 `
 
 const Container = styled.div`
@@ -53,7 +55,6 @@ const Container = styled.div`
   z-index: 10;
   padding: 13rem 0 6.7rem 0;
   background-image: linear-gradient(to bottom, rgba(70, 141, 204, .1), rgba(70, 141, 204, 1) 50%);
-  //background-image: linear-gradient(20deg, rgba(70, 141, 204, 1)10%, rgba(70, 141, 204, .9) 11%,rgba(70, 141, 204, .8) 19%, rgba(70, 141, 204, .7) 20%, rgba(70, 141, 204, .7) 29%, rgba(70, 141, 204, .6) 30%, rgba(70, 141, 204, 0.1) );
 
   ${()=>respond('m','background-image: none;')}
 `

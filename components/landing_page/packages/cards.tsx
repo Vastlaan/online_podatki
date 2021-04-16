@@ -6,12 +6,12 @@ export default function CardsComponents() {
   return (
     <>
     <Boxes>
-      <Card heading='Rozliczenia' text='Rozliczenia podatkowe w Polsce, Holandii, Niemczech i Belgii' price='45'/>
-      <Card heading='Administracja' text='Administracja jednoosobowych działalności gospodarczych i firm VOF' price='100'/>
+      <Card heading='Rozliczenia' text='Rozliczenia podatkowe w Polsce, Holandii, Niemczech i Belgii' price='45' link='/services/taxes'/>
+      <Card heading='Administracja' text='Administracja jednoosobowych działalności gospodarczych i firm VOF' price='100' link='/services/administration'/>
     </Boxes>
     <Boxes>
-      <Card heading='Dofinansowania' text='Dofinansowania do ubezpieczenia, mieszkania, żłobka i inne' price='40'/>
-      <Card heading='Zasiłki' text='Zasiłek rodzinny, macierzyński, chorobowy, dla bezrobotnych i inne' price='50'/>
+      <Card heading='Dofinansowania' text='Dofinansowania do ubezpieczenia, mieszkania, żłobka i inne' price='40' link='/services/subsidies'/>
+      <Card heading='Zasiłki' text='Zasiłek rodzinny, macierzyński, chorobowy, dla bezrobotnych i inne' price='50' link='/services/benefits'/>
     </Boxes>
     </>
   )
