@@ -7,9 +7,9 @@ export default function Downloads() {
   return (
     <>
       <Header 
-        title='Formularze i dokumenty'
+        title='Formularze, dokumenty'
         body='Tutaj znajdziesz najważniejsze formularze do pobrania w formacie pdf'
-        imageUrl='/img/header-contact.jpg'
+        imageUrl='/img/header-downloads.jpg'
       />
 
       <Intersection

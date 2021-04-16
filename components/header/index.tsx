@@ -39,7 +39,7 @@ export default function HeaderComponent({ title, body, imageUrl }:HeaderProps) {
                             {title
                             .split(" ")
                             .map((word, i) =>
-                                i === 2 ? <span key={i}>{word} </span> : word + " "
+                                i === 1 ? <span key={i}>{word} </span> : word + " "
                             )}
                         </HeadingHuge>
                     </FlexCol>

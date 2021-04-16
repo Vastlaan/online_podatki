@@ -3,6 +3,10 @@ import respond from './respond'
 import {FlexibleComponentProps, ThemeProps} from '../types'
 
 
+interface ContainerAnimatedProps{
+  animation?: string;
+}
+
 // GRIDS
 
 export const MainGrid = styled.div`
@@ -108,9 +112,8 @@ export const FlexCol = styled.div<FlexibleComponentProps>`
   align-items: ${p=>p.align?p.align:'center'};
   background-color: ${p=>p.background?p.background:'transparent'};
 `
-
-export const ContainerAnimated = styled.div`
-  transform: translate(0, 100px);
+export const ContainerAnimated = styled.div<ContainerAnimatedProps>`
+  transform: ${p=>p.animation==='mx'?'translateX(-100px)':p.animation==='px'?'translateX(100px)':'translate(0, 100px)'};
   opacity: 0;
   visibility: hidden;
 `

@@ -113,7 +113,7 @@ const BackgroundVideo = styled.div<VideoProps>`
         left: 0;
         right: 0;
         bottom: 0;
-        background-image: linear-gradient(to bottom,rgba(70, 141, 204, 1) 10%, rgba(70, 141, 204, .6) 50%, rgba(70, 141, 204, 0.8) );
+        background-image: linear-gradient(to bottom,rgba(70, 141, 204, 1) 10%, rgba(70, 141, 204, .3) 50%, rgba(70, 141, 204, 0.3) );
         transform: rotate(-6deg) scale(1.15) translate(2rem, -4rem);
         z-index: 2;
     }

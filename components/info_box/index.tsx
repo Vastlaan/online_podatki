@@ -6,20 +6,20 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import {FlexibleComponentProps} from '../../types'
 
 interface BoxProps{
-  delay?: number;
+  animation?: string;
   icon: ReactElement;
   heading: string;
   text: string;
   background?: string;
 
 }
-export default function BoxComponent({delay, icon, heading, text, background}:BoxProps) {
+export default function BoxComponent({animation, icon, heading, text, background}:BoxProps) {
 
   const target = useRef()
 
   useEffect(()=>{
     gsap.registerPlugin(ScrollTrigger)
-    const anim = gsap.to(target.current, {autoAlpha: 1, y:0, duration: 1, delay: delay});
+    const anim = gsap.to(target.current, {autoAlpha: 1, y:0, x:0, duration: 1});
     ScrollTrigger.create({
       trigger: target.current, 
       start: "top 90%",
@@ -29,7 +29,7 @@ export default function BoxComponent({delay, icon, heading, text, background}:Bo
 
   return (
 
-    <ContainerAnimated ref={target}>
+    <ContainerAnimated ref={target} animation={animation}>
       <Background background={background && background}>
         <FlexCol padding="1.4rem" margin='1.4rem'>
 

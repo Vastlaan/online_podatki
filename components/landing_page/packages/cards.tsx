@@ -10,7 +10,7 @@ export default function CardsComponents() {
       <Card heading='Administracja' text='Administracja jednoosobowych działalności gospodarczych i firm VOF' price='100'/>
     </Boxes>
     <Boxes>
-      <Card heading='Dofinansowania' text='Dofinansowania do ubezpieczenia, mieszkania, żłobka i inne' price='30'/>
+      <Card heading='Dofinansowania' text='Dofinansowania do ubezpieczenia, mieszkania, żłobka i inne' price='40'/>
       <Card heading='Zasiłki' text='Zasiłek rodzinny, macierzyński, chorobowy, dla bezrobotnych i inne' price='50'/>
     </Boxes>
     </>

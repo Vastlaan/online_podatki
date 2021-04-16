@@ -40,10 +40,10 @@ export const Heading1 = styled.h1<FlexibleComponentProps>`
   padding: ${p=>p.padding?p.padding:'0'};
   font-family: ${fonts.heading};
   font-size: 3.3rem;
-  font-weight: 500;
+  font-weight: 600;
   text-transform: uppercase;
   text-shadow: .3rem .3rem .5rem rgba(0,0,0,.3);
-  color: ${(p)=>p.color?p.color:p.theme.black};
+  color: ${(p)=>p.color?p.color:p.theme.grey3};
   text-align: ${p=>p.align?p.align:'left'};
   max-width: ${(p:FlexibleComponentProps)=>p.wide?p.wide:'65rem'};
 

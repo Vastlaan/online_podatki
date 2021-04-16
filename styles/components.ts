@@ -66,16 +66,16 @@ export const ListItem = styled.li<ListItemProps>`
   
   ${()=>respond('m','margin: 0 1.4rem 0 0')}
 
-  &::after{
-      content: '';
-      position: absolute;
-      bottom: ${p=>p.active?'0':'-.5rem'};
-      left:0;
-      width: 100%;
-      height: 2px;
-      transition: all .3s;
-      background-color: ${p=>p.active?p.theme.secondaryLight:'transparent'};
-    }
+  // &::after{
+  //     content: '';
+  //     position: absolute;
+  //     bottom: -.5rem;
+  //     left:0;
+  //     width: 100%;
+  //     height: 2px;
+  //     transition: all .3s;
+  //     background-color: transparent;
+  //   }
    &::before{
       content: '';
       position: absolute;
@@ -88,10 +88,10 @@ export const ListItem = styled.li<ListItemProps>`
     }
 
   &:hover{
-    &::after{
-      bottom: 0rem;
-      background-color: ${p=>p.theme.secondaryLight};
-    }
+    // &::after{
+    //   bottom: 0rem;
+    //   background-color: ${p=>p.theme.secondaryLight};
+    // }
     &::before{
       top: 0rem;
       background-color: ${p=>p.theme.secondaryLight};
