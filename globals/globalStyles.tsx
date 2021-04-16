@@ -31,6 +31,7 @@ const StylesConatiner = createGlobalStyle`
   }
   ::-webkit-scrollbar{display: none;}
   html{
+      overflow-x: hidden;
       font-size: 50%;
       box-sizing: border-box;
       font-family: ${fonts.para};
@@ -67,6 +68,6 @@ const StylesConatiner = createGlobalStyle`
         outline: none;
         box-shadow: 0 0 5px ${(p : ThemeProps) => p.theme.primary};
       }
-      color: ${(p : ThemeProps) => p.theme.grey4}
+      color: ${(p) => p.theme.black};
   }
 `;

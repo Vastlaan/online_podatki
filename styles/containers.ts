@@ -35,19 +35,20 @@ export const Header = styled.header<FlexibleComponentProps>`
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    width: 100%;
+    width: 100vw;
     min-height: 30vh;
     background-image: linear-gradient(
             to bottom,
             rgba(52, 104, 151, 0.9),
             rgba(52, 104, 151, 0.6)
         ),
-        url(${(p) => (p.url ? p.url : "./img/header-3.jpg")});
+        url(${(p) => (p.url ? p.url==='none'?'':p.url : "./img/header-3.jpg")});
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     opacity: 0;
     visibility: hidden;
+    position: relative;
     ${() => respond("m", `padding-top: 9.7rem; min-height: 50vh`)}
 `;
 
@@ -117,6 +118,7 @@ export const ContainerAnimated = styled.div<ContainerAnimatedProps>`
   transform: ${p=>p.animation==='mx'?'translateX(-100px)':p.animation==='px'?'translateX(100px)':'translate(0, 100px)'};
   opacity: 0;
   visibility: hidden;
+  overflow:hidden;
 `
 export const BilboardContainer = styled.section<FlexibleComponentProps>`
     width: 100%;

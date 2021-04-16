@@ -35,7 +35,8 @@ export interface FlexibleComponentProps{
 }
 
 export interface ListItemProps{
-  active?: boolean
+  active?: boolean;
+  margin?:string;
 }
 
 export interface ErrorObject{

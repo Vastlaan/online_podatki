@@ -66,7 +66,7 @@ const Navigation = styled.nav<NavigationProps>`
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
+  right:0;
   display: flex;
   flex-direction: column;
   z-index: 100;

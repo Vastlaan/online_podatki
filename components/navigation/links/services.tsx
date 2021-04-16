@@ -18,7 +18,6 @@ export default function ServicesItemComponent({isActive}:ServicesProps) {
   useEffect(()=>{
   
     function adjustMenu(){
-      console.log(checkViewportWidth(768))
       if(checkViewportWidth(768)){
         setIsSmall(true)
       }else{

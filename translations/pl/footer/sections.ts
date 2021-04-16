@@ -5,23 +5,23 @@ export const data = [
             links: [
                 {
                     name: "Rozliczenia",
-                    url: "/",
+                    url: "/services/taxes",
                 },
                 {
                     name: "Dofinansowania",
-                    url: "/",
+                    url: "/services/subsidies",
                 },
                 {
                     name: "Zasiłki",
-                    url: "/",
+                    url: "/services/benefits",
                 },
                 {
                     name: "Administracja",
-                    url: "/",
+                    url: "/services/administration",
                 },
                 {
                     name: "Pozostałe",
-                    url: "/",
+                    url: "/services/other",
                 },
             ],
         },
@@ -35,7 +35,7 @@ export const data = [
                 },
                 {
                     name: "Aktualności",
-                    url: "/",
+                    url: "/news",
                 },
                 
                 {
@@ -44,7 +44,7 @@ export const data = [
                 },
                 {
                     name: "Pliki cookie",
-                    url: "/",
+                    url: "/cookies",
                 },
                 {
                   name: "Mapa strony",

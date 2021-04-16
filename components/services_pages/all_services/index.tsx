@@ -16,7 +16,7 @@ export default function PortfolioComponent() {
         <Cat onClick={()=>setType("")}>Wszystkie</Cat>
         {categories.map(cat=>{
           return(
-            <Cat onClick={()=>setType(cat.type)}>{cat.display}</Cat>
+            <Cat onClick={()=>setType(cat.type)} key={`${cat.display}-${cat.type}`}>{cat.display}</Cat>
           )
         })}
       </FlexRow>
@@ -57,7 +57,7 @@ export default function PortfolioComponent() {
 }
 const Cat = styled.button`
   width: 10rem;
-  margin: 1.4rem;
+  margin: .9rem .4rem ;
   padding: 1rem 0;
   background-color: ${p=>p.theme.primaryDark};
   color: ${p=>p.theme.grey1};
@@ -68,7 +68,7 @@ const Cat = styled.button`
   cursor: pointer;
   transition: all .3s;
 
-  ${()=>respond('m','padding: 1rem 2.7rem; width: 14rem;')}
+  ${()=>respond('m','padding: 1rem 2.7rem; width: 14rem; margin: 1.4rem;')}
   &:hover{
     background-color: ${p=>p.theme.primary};
   }
@@ -80,6 +80,7 @@ const Projects = styled.div`
   margin: 0 auto;
   min-height: 25rem;
   position: relative;
+  overflow: hidden;
 `
 const ImageContainer = styled.div`
   position: absolute;
@@ -106,14 +107,16 @@ const ImageContainer = styled.div`
   }
 `
 const Project = styled.div`
-  width: 28rem;
   height: 28rem;
+  width: 30rem;
   position: relative;
   margin: 1.4rem;
   padding: 1.4rem;
   transition: all .3s;
   box-shadow: 0 0 2rem rgba(0,0,0,.6);
   cursor: pointer;
+
+  ${()=>respond('m','width: 28rem;')}
   h3{
     font-family: ${fonts.heading};
     text-shadow: .3rem .3rem .5rem rgba(0,0,0,.6);
