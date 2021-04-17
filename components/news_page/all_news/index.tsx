@@ -18,9 +18,7 @@ export default function AllNewsComponent({ data }) {
             <FlexCol>
                 {data.map((article) => {
                     function getMarkdownText() {
-                        let rawMarkup = marked(article.content, {
-                            sanitize: true,
-                        });
+                        let rawMarkup = marked(article.content);
                         rawMarkup = rawMarkup.substring(0, 200) + " ...";
                         return { __html: rawMarkup };
                     }
@@ -79,8 +77,11 @@ const Headline = styled.h3`
     display: flex;
     align-items: center;
     svg {
+        display: none;
         margin-right: 1rem;
         color: ${(p) => p.theme.grey2};
+
+        ${()=>respond('m','display: inline-block;')}
     }
 `;
 const Date = styled.div`

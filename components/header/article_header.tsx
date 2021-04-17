@@ -14,8 +14,6 @@ interface HeaderProps{
 
 export default function HeaderComponent({ title, body, imageUrl }:HeaderProps) {
 
-    console.log(imageUrl)
-
     const target = useRef()
 
     const router = useRouter()
@@ -28,9 +26,9 @@ export default function HeaderComponent({ title, body, imageUrl }:HeaderProps) {
     },[])
 
     return (
-        <Header minHeight="45vh" url={undefined} ref={target}>
+        <Header minHeight="45vh" url={'none'} ref={target}>
             <BackgroundImage>
-              {imageUrl?(<Image src={imageUrl} alt={title} layout='fill'/>):(<Image src='/img/header-1.jpg' alt={title} layout='fill'/>)}
+              {imageUrl?(<Image src={imageUrl} alt={title} layout='fill' objectFit='cover'/>):(<Image src='/img/header-1.jpg' alt={title} layout='fill'/>)}
               
             </BackgroundImage>
             <ContainerNarrow>
