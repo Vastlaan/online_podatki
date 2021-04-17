@@ -1,0 +1,23 @@
+urlset {
+    display: flex;
+    flex-direction: column;
+    padding: 27px;
+}
+url {
+    margin: 14px 0;
+    display: flex;
+    flex-direction: column;
+}
+loc {
+    margin: 6px 0;
+    font-size: 16px;
+    font-family: "Courier New", Courier, monospace;
+}
+lastmod {
+    font-size: 9px;
+    font-family: "Courier New", Courier, monospace;
+}
+priority {
+    font-size: 4px;
+    opacity: 0;
+}
