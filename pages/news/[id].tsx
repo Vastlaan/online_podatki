@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Head from '../../components/seo'
 import styled from "styled-components";
 import marked from "marked";
 import Header from '../../components/header/article_header'
@@ -22,6 +23,7 @@ export default function ArticleComponent({ data }) {
 
     return (
         <Layout>
+            <Head title={title} />
             <Header title={title} imageUrl={image?`https://api.itcontext.nl${image.url}`:'none'}/>
             <SectionNarrow>
                 
