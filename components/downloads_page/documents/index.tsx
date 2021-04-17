@@ -28,10 +28,6 @@ export default function DocumentsComponent() {
             <ImFilePdf/>
             Zaświadczenie o dochodach za rok 2016
           </Anchor>
-          <Anchor href='/documents/pl/zaswiadczenie_o_dochodach_2015.pdf'>
-            <ImFilePdf/>
-            Zaświadczenie o dochodach za rok 2015
-          </Anchor>
         </FlexCol>
 
         <Heading4 margin='2.7rem 1.4rem'>Dokumenty UWV</Heading4>
