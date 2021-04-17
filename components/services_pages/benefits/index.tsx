@@ -31,7 +31,7 @@ export default function TaxesComponent() {
         features={[
           'Zasiłek dla bezrobotnych (również dla niezameldowanych)',
           'Zasiłek macierzyński (również dla niezameldowanych)',
-          'Zasiłek roszinny (również dla niezameldowanych)',
+          'Zasiłek rodzinny (również dla niezameldowanych)',
           'Zasiłek chorobowy',
           'Pomoc w załatwianiu dodatku do utraconych godzin',
           'Transfer zasiłku'

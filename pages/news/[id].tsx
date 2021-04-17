@@ -152,7 +152,7 @@ const Core = styled.div`
     padding: 1.4rem 0;
     ol, ul {
         list-style: none;
-        padding-left: 2rem;
+        padding-left: 1.4rem;
         margin: 1.4rem 0;
         li {
             font-weight: 500;

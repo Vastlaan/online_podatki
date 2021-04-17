@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react'
 import styled from 'styled-components'
 import Link from 'next/link'
-import {respond, fonts, ListItem,} from '../../../styles'
+import {respond, fonts, ListItem, Line} from '../../../styles'
 import {BiChevronDown} from 'react-icons/bi'
 import {ListItemProps} from '../../../types'
 import {checkViewportWidth} from '../../../styles/utils'
@@ -36,6 +36,10 @@ export default function ServicesItemComponent({isActive}:ServicesProps) {
   if(isSmall){
     return(
       <>
+      <Line/>
+      <Link href='/services'>
+        <ListItem>Usługi</ListItem>
+      </Link>
       <Link href='/services/taxes'>
         <ListItem>Rozliczenia Podatkowe</ListItem>
       </Link>
@@ -51,6 +55,7 @@ export default function ServicesItemComponent({isActive}:ServicesProps) {
       <Link href='/services/other'>
         <ListItem>Pozostałe usługi</ListItem>
       </Link>
+      <Line/>
       </>
     )
   }else{

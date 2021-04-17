@@ -4,6 +4,7 @@ import Name from './name'
 import Email from './email'
 import Message from './message'
 import Disclaimer from './disclaimer'
+import Modal from '../../modals/successfull'
 import {respond, SectionNarrow,  Heading4, ButtonSecondary} from '../../../styles'
 import {validateAll} from '../../../validations'
 
@@ -17,7 +18,7 @@ export default function FormComponent() {
   const [displayModal, setDisplayModal] = useState(false)
   const [error, setError] = useState({type: '', field: '', message:''});
 
-  function submitForm(e){
+  async function submitForm(e){
     e.preventDefault()
     setError({type: '', field: '', message:''})
 
@@ -30,7 +31,33 @@ export default function FormComponent() {
     if(!disclaimer){
       return setError({type: 'error', field: 'disclaimer', message:'Please select the checkbox'})
     }
-    console.log('form submited')
+    try{
+      const res = await fetch('/api/sendMail', {
+        method: "POST",
+        headers:{
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          message
+        })
+      })
+      const data = await res.json()
+      
+      if(data.error){
+        return setError({
+          type: 'error',
+          field: 'disclaimer', 
+          message:data.error
+        })
+      }
+
+      return setDisplayModal(true)
+
+    }catch(e){
+      console.error(e)
+    }
   }
   return (
     <SectionNarrow>
@@ -50,6 +77,7 @@ export default function FormComponent() {
         <ButtonSecondary>Wyślij</ButtonSecondary>
 
       </Form>
+      {displayModal && <Modal message='Dziękujemy za wiadomość! Jeden z naszych kolegów wkrótce się z Tobą skontaktuje. Miłego dnia!'/>}
     </SectionNarrow>
     
   )

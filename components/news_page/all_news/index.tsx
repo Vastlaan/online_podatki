@@ -31,6 +31,7 @@ export default function AllNewsComponent({ data }) {
                                 <AiOutlineRead />
                                 <span>{article.title}</span>
                             </Headline>
+                            
                             <Date>
                                 <IoMdTimer />
                                 {article.date}
@@ -70,8 +71,8 @@ const Article = styled.div`
 `;
 const Headline = styled.h3`
     padding: 1rem 2rem;
-    font-size: 2.5rem;
-    font-weight: 800;
+    font-size: 2.2rem;
+    font-weight: 600;
     background-color: ${(p) => p.theme.primaryDark};
     color: ${(p) => p.theme.white};
     display: flex;
@@ -106,7 +107,7 @@ const Core = styled.div`
     }
     p,
     li {
-        font-size: 2.2rem;
+        font-size: 1.8rem;
         font-family: ${fonts.para};
     }
     pre {

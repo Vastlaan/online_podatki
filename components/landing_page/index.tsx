@@ -19,6 +19,7 @@ export default function LandingPage(){
         body='Interesuje Cię tanie biuro rachunkowe? Nie mogłeś lepiej trafić! Z nami unikniesz wielu zbędnych kosztów, nie obniżając przy tym poziomu własnego profesjonalizmu.'
         margin='0 auto 6.7rem auto'
         icon={<RiMoneyEuroCircleLine/>}
+        link='/services'
       />
 
       <Packages />
@@ -39,6 +40,7 @@ export default function LandingPage(){
         body='Zastanawiasz się, jakie warunki jako wnioskodawca musisz spełnić, aby Twój wniosek o świadczenie w Holandii został rozpatrzony pozytywnie? Skontaktuj się z nami, pomożemy Ci uzyskać jak największe świadczenia.'
         margin='0 auto 6.7rem auto'
         icon={<FaHandsHelping/>}
+        link='/services/benefits'
       />   
      
     </>

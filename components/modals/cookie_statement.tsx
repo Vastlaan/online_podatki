@@ -9,13 +9,13 @@ export default function CookieStatementComponent() {
     const target = useRef();
 
     function hideStatement() {
-        window.localStorage.setItem("customitemname", JSON.stringify({cookies_accepted: true}));
+        window.localStorage.setItem("onlinepodatkicookiesagree", JSON.stringify({cookies_accepted: true}));
         gsap.to(target.current, { autoAlpha: 0, y: "100%" });
     }
 
     useEffect(() => {
         const isAgreed = JSON.parse(window.localStorage.getItem(
-            "customitemname"
+            "onlinepodatkicookiesagree"
         ));
 
         if (!isAgreed) {
@@ -26,19 +26,19 @@ export default function CookieStatementComponent() {
     return (
         <CookiesStatement ref={target}>
             <CustomText>
-                Wij gebruiken cookies! Om je de best mogelijke ervaring te
-                bieden op onze website, gebruiken wij en derde partijen
-                technieken zoals cookies.{" "}
+                Uprzejmie informujemy, że w ramach naszej witryny używamy{" "}
                 <Link href="/cookies">
-                    <span>Lees meer</span>
+                    <span>plików cookies</span>
                 </Link>{" "}
-                over wat de cookies zijn en hoe gebruiken wij cookies.
+                w celu świadczenia usług na najwyższym poziomie oraz w sposób dostosowany do Twoich indywidualnych preferencji. 
+                Korzystanie z witryny bez zmiany ustawień oznacza, że akceptujesz otrzymywanie plików cookies. 
+                Zmiany ustawień dla plików cookies możesz dokonać w każdym momencie użytkowania serwisu.
             </CustomText>
             <ButtonSmall
                 margin=".9rem 1.4rem"
                 onClick={hideStatement}
             >
-                Ga Akkord
+                Zgoda
             </ButtonSmall>
         </CookiesStatement>
     );
@@ -63,7 +63,7 @@ const CookiesStatement = styled.section`
 
 const CustomText = styled.p`
     margin: ${(p: FlexibleComponentProps) => (p.margin ? p.margin : "0")};
-    font-size: 1.9rem;
+    font-size: 1.4rem;
     font-family: ${fonts.heading};
     font-weight: 300;
     color: ${(p: ThemeProps) => (p.color ? p.color : p.theme.grey3)};

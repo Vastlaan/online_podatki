@@ -62,7 +62,7 @@ function IntersectionComponent({ category, title, body, link, margin, icon, them
               {link && (
                   <Link href={link}>
                       <ButtonPrimary margin="1.4rem auto">
-                          Lees meer
+                          Czytaj więcej
                       </ButtonPrimary>
                   </Link>
               )}
