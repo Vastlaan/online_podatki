@@ -42,7 +42,7 @@ export default function AllNewsComponent({ data }) {
                                 <ButtonPrimary>Czytaj</ButtonPrimary>
                             </Link>
                             <Tags>
-                                {article.online_podatki_category.name}
+                                
                                 {article.online_podatki_categories.map((cat) => {
                                     return (
                                         <span key={`category-${cat.id}`}>
