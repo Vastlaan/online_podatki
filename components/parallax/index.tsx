@@ -8,9 +8,10 @@ interface ParallaxProps{
   title?: string;
   body?: string;
   btn?: string;
+  link?: string
 }
 
-export default function ParallaxBackground({ title, body, btn }: ParallaxProps) {
+export default function ParallaxBackground({ title, body, btn, link }: ParallaxProps) {
 
     const target = useRef()
 
@@ -35,7 +36,7 @@ export default function ParallaxBackground({ title, body, btn }: ParallaxProps) 
             <Text wide='65rem' align="center" margin='2.7rem 0' color='white'>
                 {body}
             </Text>
-            <Link href='/'>
+            <Link href={link}>
                   <ButtonPrimary>{btn}</ButtonPrimary>
             </Link>
         </BilboardContainer>

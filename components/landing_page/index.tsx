@@ -29,6 +29,7 @@ export default function LandingPage(){
         title='Księgowość Holandia – usługi dla firm'
         body='Oferujemy Państwu kompleksową obsługę z zakresu księgowości, administracji, finansów oraz wszystkich spraw gospodarczych w Holandii.'
         btn='Aktualności'
+        link='/news'
       />
 
       <Intersection
