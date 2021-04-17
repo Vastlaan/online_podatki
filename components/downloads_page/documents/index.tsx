@@ -44,7 +44,7 @@ export default function DocumentsComponent() {
             <ImFilePdf/>
             Aanvragen formulier (e301 pools)
           </Anchor>
-          <Anchor href='/documents/uwv/uwv_ontslagbevestigings.pdf'>
+          <Anchor href='/documents/uwv/uwv_ontslagbevestiging.pdf'>
             <ImFilePdf/>
             UWV Ontslagbevestiging
           </Anchor>

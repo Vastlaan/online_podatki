@@ -59,7 +59,7 @@ const ImageBox = styled.div<ImageBoxProps>`
   width: 100%;
   min-height: 30rem;
   max-height: 50rem;
-  background-image: linear-gradient(to bottom, rgba(70, 141, 204, 0.3), rgba(70, 141, 204, 0.3)), url(${p=>p.imageUrl});
+  background-image: linear-gradient(to bottom, rgba(70, 141, 204, 0), rgba(70, 141, 204, 0)), url(${p=>p.imageUrl});
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
