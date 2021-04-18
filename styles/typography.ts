@@ -39,9 +39,9 @@ export const Heading1 = styled.h1<FlexibleComponentProps>`
   margin: ${(p) =>p.margin?p.margin:"0"};
   padding: ${p=>p.padding?p.padding:'0'};
   font-family: ${fonts.heading};
-  font-size: 3.3rem;
+  font-size: 4.4rem;
   font-weight: 600;
-  text-transform: uppercase;
+  line-height: 1.2;
   text-shadow: .3rem .3rem .5rem rgba(0,0,0,.3);
   color: ${(p)=>p.color?p.color:p.theme.grey3};
   text-align: ${p=>p.align?p.align:'left'};

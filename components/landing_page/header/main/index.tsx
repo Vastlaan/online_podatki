@@ -31,7 +31,7 @@ export default function MainComponent() {
   return (
     <Main align={responsiveFlexAlligment} ref={target}>
 
-      <Heading1 wide='55rem' color='white' align={responsiveAlligment}>
+      <Heading1 wide='58rem' color='white' align={responsiveAlligment}>
         Profesjonalna obsługa księgowa <span>firm</span> i osób prywatnych
       </Heading1>
 

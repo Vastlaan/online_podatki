@@ -13,6 +13,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@sendgrid/mail": "^7.4.2",
     "dompurify": "^2.2.7",
     "gsap": "file:gsap-beta.tgz",
     "marked": "^2.0.3",

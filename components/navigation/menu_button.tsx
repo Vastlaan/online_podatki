@@ -48,7 +48,7 @@ const Button = styled.button<ButtonProps>`
     div {
         width: 3rem;
         height: 2px;
-        background-color: ${p=>p.theme.secondary};
+        background-color: ${p=>p.theme.secondaryLight};
         position: relative;
         transition: all 0.3s;
         transform: ${(props) => (props.isOpen ? "rotate(135deg)" : "")};
@@ -59,7 +59,7 @@ const Button = styled.button<ButtonProps>`
             content: "";
             display: block;
             position: absolute;
-            background-color: ${p=>p.theme.secondary};
+            background-color: ${p=>p.theme.secondaryLight};
             top: -1rem;
             left: 0;
             transition: all 0.3s;
@@ -72,7 +72,7 @@ const Button = styled.button<ButtonProps>`
             content: "";
             display: ${(props) => (props.isOpen ? "none" : "block")};
             position: absolute;
-            background-color: ${p=>p.theme.secondary};
+            background-color: ${p=>p.theme.secondaryLight};
             top: 1rem;
             left: 0;
         }

@@ -101,7 +101,7 @@ const ServicesItem = styled.div<ListItemProps>`
   border: none;
   background-color: transparent;
   font-family: ${fonts.heading};
-  font-weight: 300;
+  font-weight: 500;
   font-size: 1.9rem;
   color: ${p=>p.theme.white};
   margin: 1.4rem;

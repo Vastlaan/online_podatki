@@ -21,8 +21,6 @@ export default function ArticleComponent({ data }) {
 
     useEffect(()=>{
         function getMarkdownText(c) {
-
-
             const domPurify = DOMPurify(window)
             const rawMarkup = domPurify.sanitize(marked(c));
             return { __html: rawMarkup };
@@ -30,8 +28,6 @@ export default function ArticleComponent({ data }) {
         const markup = getMarkdownText(content);
         setMarkup(markup)
     },[])
-
-    
 
     return (
         <Layout>
@@ -41,7 +37,7 @@ export default function ArticleComponent({ data }) {
                 
                 <Article key={id}>
                     
-                    <Heading1 color='#0b141e'>{title}</Heading1>
+                    <Heading1 color='#0b141e' wide='100%'>{title}</Heading1>
 
                     <Line margin='1.4rem 0' color='black' wide='100%'/>
                     <Info>

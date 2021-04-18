@@ -2,12 +2,15 @@ import Header from './header'
 import Intersection from '../intersection'
 import Parallax from '../parallax'
 import Boxes from './boxes'
-import Services from './services'
+import Flyers from './flyers'
 import Packages from './packages'
 import {RiMoneyEuroCircleLine} from 'react-icons/ri'
 import {FaHandsHelping} from 'react-icons/fa'
+import { AiOutlineRead } from "react-icons/ai";
 
-export default function LandingPage(){
+export default function LandingPage({data}){
+
+  console.log(data)
   return (
     <>
       <Header />
@@ -24,13 +27,23 @@ export default function LandingPage(){
 
       <Packages />
 
+      <Intersection
+        category=''
+        title='Wyjątkowo u nas'
+        body=''
+        margin='0 auto'
+        icon={<AiOutlineRead/>}
+      />
+
+      <Flyers data={data} />
+
       <Boxes/>
 
       <Parallax
         title='Księgowość Holandia – usługi dla firm'
         body='Oferujemy Państwu kompleksową obsługę z zakresu księgowości, administracji, finansów oraz wszystkich spraw gospodarczych w Holandii.'
-        btn='Aktualności'
-        link='/news'
+        btn='Usługi'
+        link='/services'
       />
 
       <Intersection

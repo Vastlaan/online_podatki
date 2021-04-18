@@ -51,7 +51,7 @@ const BackgroundEffects = styled.div`
   display: inline-block;
   z-index: -1;
 
-  ${()=>respond('xxl','height: 85vh;')}
+  ${()=>respond('xxl','height: 75vh;')}
 `
 
 const Gradients = styled.div`
@@ -63,7 +63,7 @@ const Gradients = styled.div`
     right: 0;
     display: inline-block;
 
-    ${()=>respond('xxl','height: 75vh;')}
+    ${()=>respond('xxl','height: 65vh;')}
 
     &::after {
         content: "";
@@ -83,7 +83,7 @@ const Gradients = styled.div`
         left: 0;
         right: 0;
         bottom: 0;
-        background-image: linear-gradient(to bottom, rgba(70, 141, 204, .3) 10%, rgba(70, 141, 204, 0.5) );
+        background-image: linear-gradient(to bottom, rgba(70, 141, 204, 0) 10%, rgba(70, 141, 204, 0.3) );
         transform: rotate(1deg) scale(1.05);
         z-index: 0;
     }
@@ -118,8 +118,8 @@ const BackgroundVideo = styled.div<VideoProps>`
         left: 0;
         right: 0;
         bottom: 0;
-        background-image: linear-gradient(to bottom,rgba(70, 141, 204, 1) 10%, rgba(70, 141, 204, .3) 50%, rgba(70, 141, 204, 0.3) );
-        transform: rotate(-6deg) scale(1.15) translate(2rem, -4rem);
+        background-image: linear-gradient(to bottom ,rgba(70, 141, 204, .6) 10%, rgba(70, 141, 204, .4) 20%,rgba(70, 141, 204, 0) 60%, rgba(70, 141, 204, 0.4) );
+        transform: rotate(-3deg) scale(1.15) translate(2rem, -4rem);
         z-index: 2;
     }
     
