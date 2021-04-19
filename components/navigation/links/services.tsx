@@ -40,7 +40,7 @@ export default function ServicesItemComponent({isActive}:ServicesProps) {
       <Link href='/services'>
         <ListItem>Usługi</ListItem>
       </Link>
-      <Link href='/services/taxes'>
+      {/* <Link href='/services/taxes'>
         <ListItem>Rozliczenia Podatkowe</ListItem>
       </Link>
       <Link href='/services/benefits'>
@@ -55,7 +55,7 @@ export default function ServicesItemComponent({isActive}:ServicesProps) {
       <Link href='/services/other'>
         <ListItem>Pozostałe usługi</ListItem>
       </Link>
-      <Line/>
+      <Line/> */}
       </>
     )
   }else{

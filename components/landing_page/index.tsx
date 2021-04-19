@@ -10,7 +10,6 @@ import { AiOutlineRead } from "react-icons/ai";
 
 export default function LandingPage({data}){
 
-  console.log(data)
   return (
     <>
       <Header />

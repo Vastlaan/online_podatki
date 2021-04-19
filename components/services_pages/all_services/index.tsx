@@ -108,7 +108,7 @@ const ImageContainer = styled.div`
 `
 const Project = styled.div`
   height: 28rem;
-  width: 30rem;
+  width: 35rem;
   position: relative;
   margin: 1.4rem;
   padding: 1.4rem;
