@@ -6,7 +6,7 @@ export default function CardsComponents() {
   return (
     <>
     <Boxes>
-      <Card heading='Rozliczenia' text='Rozliczenia podatkowe w Polsce, Holandii, Niemczech i Belgii' price='45' link='/services/taxes'/>
+      <Card heading='Rozliczenia' text='Rozliczenia podatkowe w Polsce, Holandii, Niemczech i Belgii' price='40' link='/services/taxes'/>
       <Card heading='Administracja' text='Administracja jednoosobowych działalności gospodarczych i firm VOF' price='100' link='/services/administration'/>
     </Boxes>
     <Boxes>

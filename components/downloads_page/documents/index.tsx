@@ -32,10 +32,6 @@ export default function DocumentsComponent() {
 
         <Heading4 margin='2.7rem 1.4rem'>Dokumenty UWV</Heading4>
         <FlexCol align='flex-start'>
-          <Anchor href='/documents/uwv/gegevens_begeleider_bij_afspraak_ww.pdf'>
-            <ImFilePdf/>
-            Gegevens begeleider bij afspraak WW
-          </Anchor>
           <Anchor href='/documents/uwv/aanvragen_formulier_e301_pools.pdf'>
             <ImFilePdf/>
             Aanvragen formulier (e301 pools)
