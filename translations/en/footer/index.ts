@@ -1,56 +1,57 @@
-export const data = [
+export default {sections: [
    {
             id: 2,
-            header: "Usługi",
+            header: "Services",
             links: [
                 {
-                    name: "Rozliczenia",
+                    name: "Tax Settlements",
                     url: "/services/taxes",
                 },
                 {
-                    name: "Dofinansowania",
+                    name: "Subsidies",
                     url: "/services/subsidies",
                 },
                 {
-                    name: "Zasiłki",
+                    name: "Social benefits",
                     url: "/services/benefits",
                 },
                 {
-                    name: "Administracja",
+                    name: "Administration",
                     url: "/services/administration",
                 },
                 {
-                    name: "Pozostałe",
+                    name: "Other",
                     url: "/services/other",
                 },
             ],
         },
         {
             id: 4,
-            header: "Dokumenty",
+            header: "Documents",
             links: [
                 {
-                    name: "Do pobrania",
+                    name: "Dowloads",
                     url: "/downloads",
                 },
                 {
-                    name: "Aktualności",
+                    name: "News",
                     url: "/news",
                 },
                 
                 {
-                    name: "Kontakt",
+                    name: "Contact",
                     url: "/contact",
                 },
                 {
-                    name: "Pliki cookie",
+                    name: "Cookies",
                     url: "/cookies",
                 },
                 {
-                  name: "Mapa strony",
+                  name: "Sitemap",
                   url: "/sitemap.xml",
                 },
 
             ],
         },
 ]
+}

@@ -80,6 +80,8 @@ export const ButtonSecondary = styled.button<FlexibleComponentProps>`
     }
 `;
 
+
+
 export const ButtonEmpty = styled.button<FlexibleComponentProps>`
     display: flex;
     align-items: center;
@@ -110,7 +112,45 @@ export const ButtonEmpty = styled.button<FlexibleComponentProps>`
         }
     }
 `;
+export const ButtonSecondarySmall = styled.button<FlexibleComponentProps>`
+    padding: 0.6rem 1.4rem;
+    margin: ${(p) =>p.margin?p.margin:"0"};
+    background-color: ${(p) => p.theme.secondary};
+    position: relative;
+    z-index: 2;
+    font-family: ${fonts.heading};
+    font-size: 1.9rem;
+    font-weight: 300;
+    letter-spacing: .15rem;
+    color: ${(p) => p.theme.white};
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    width: ${(p)=>p.wide?p.wide:'auto'};
+    box-shadow: 0 0 1rem rgba(0,0,0,.3);
 
+    svg {
+        margin-right: .6rem;
+        font-size: 2.2rem;
+    }
+    &::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: ${(p) => p.theme.primary};
+        z-index: -1;
+        transition: all 0.3s;
+    }
+    &:hover {
+        &::after {
+            top: 0;
+        }
+    }
+`;
 export const ButtonEmptyReverse = styled.button<FlexibleComponentProps>`
     display: flex;
     align-items: center;

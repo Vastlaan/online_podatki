@@ -1,4 +1,5 @@
 import {Dispatch, SetStateAction} from 'react'
+import {useRouter} from 'next/router'
 import {Field} from '../../../styles'
 import {ErrorObject} from '../../../types'
 
@@ -10,9 +11,13 @@ interface NameProps{
 
 
 export default function NameComponent({name, setName, error}:NameProps) {
+
+  const router = useRouter()
+  const {locale} = router
+
   return (
     <Field>
-      <label htmlFor="name">Imię i nazwisko:</label>
+      <label htmlFor="name">{locale==='en'?"Full Name":"Imię i nazwisko"}:</label>
       <input
           type="text"
           id="name"

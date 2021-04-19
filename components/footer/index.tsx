@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import styled from "styled-components";
 import Links from "./links";
 import Copyright from "./copyright";
@@ -8,9 +7,6 @@ export default function FooterComponent() {
     return (
         <Footer>
             <ContainerNarrow>
-                {/* <Logo>
-                    <Image src="/img/logo_white.png" alt="logo" width='220' height='80'/>
-                </Logo> */}
                 <Links/>
                 <Copyright />
             </ContainerNarrow>

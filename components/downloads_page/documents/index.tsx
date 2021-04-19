@@ -1,12 +1,17 @@
 import styled from 'styled-components'
-import {respond, SectionNarrow, Heading4, FlexCol} from '../../../styles'
+import {useRouter} from 'next/router'
+import { SectionNarrow, Heading4, FlexCol} from '../../../styles'
 import { ImFilePdf } from "react-icons/im";
 
 export default function DocumentsComponent() {
+
+  const router = useRouter()
+  const {locale} = router
+
   return (
     <SectionNarrow>
       <Documents>
-        <Heading4 margin='0 0 2.7rem 1.4rem'>Zaświadczenia o dochodach</Heading4>
+        <Heading4 margin='0 0 2.7rem 1.4rem'>{locale==='en'?"Income certificates":"Zaświadczenia o dochodach"}</Heading4>
         <FlexCol align='flex-start'>
           <Anchor href='/documents/pl/zaswiadczenie_o_dochodach_2020.pdf'>
             <ImFilePdf/>
@@ -30,7 +35,7 @@ export default function DocumentsComponent() {
           </Anchor>
         </FlexCol>
 
-        <Heading4 margin='2.7rem 1.4rem'>Dokumenty UWV</Heading4>
+        <Heading4 margin='2.7rem 1.4rem'>{locale==='en'?"Documents UWV":"Dokumenty UWV"}</Heading4>
         <FlexCol align='flex-start'>
           <Anchor href='/documents/uwv/aanvragen_formulier_e301_pools.pdf'>
             <ImFilePdf/>
@@ -42,7 +47,7 @@ export default function DocumentsComponent() {
           </Anchor>
         </FlexCol>
 
-        <Heading4 margin='2.7rem 1.4rem'>Pozostałe</Heading4>
+        <Heading4 margin='2.7rem 1.4rem'>{locale==='en'?"Others":"Pozostałe"}</Heading4>
         <FlexCol align='flex-start'>
           <Anchor href='/documents/nl/holandia_rozliczenie_podatku.pdf'>
             <ImFilePdf/>

@@ -1,25 +1,10 @@
-import {useEffect, useState} from 'react'
 import styled from 'styled-components'
 import BackgroundEffects from './background_effects'
 import Main from './main'
 import Side from './side'
-import { respond, ContainerNarrow, MainGrid, FlexCol, Heading1, Text, } from '../../../styles'
-import {checkViewportWidth} from '../../../styles/utils'
+import { respond, ContainerNarrow, MainGrid } from '../../../styles'
 
 export default function HeaderComponent() {
-
-  // const [responsivePadding, setResponsivePadding] = useState("0")
-
-  // useEffect(()=>{
-
-  //   function adjustStyle(){
-  //     return checkViewportWidth(996)?setResponsivePadding("2.7rem"):setResponsivePadding("0")
-  //   }
-  //   adjustStyle()
-  //   window.addEventListener('resize', adjustStyle)
-
-  //   return ()=>window.removeEventListener('resize', adjustStyle)
-  // },[])
 
   return (
      <Header>

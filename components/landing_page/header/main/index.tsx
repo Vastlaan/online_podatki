@@ -1,13 +1,19 @@
 import {useEffect, useState, useRef} from 'react'
+import {useRouter} from 'next/router'
 import styled from 'styled-components'
 import gsap from 'gsap'
-import { Heading1, Text, FlexCol, Line,} from '../../../../styles'
-import List from './list'
+import { Heading1, Text} from '../../../../styles'
 import Buttons from './buttons'
 import {checkViewportWidth} from '../../../../styles/utils'
 import {FlexibleComponentProps} from '../../../../types'
+import en from '../../../../translations/en/landing_page/header/main'
+import pl from '../../../../translations/pl/landing_page/header/main'
 
 export default function MainComponent() {
+
+  const router = useRouter()
+  const {locale } = router
+  const translations = locale==='en'?en:pl
 
   const [responsiveAlligment, setResponsiveAlligment] = useState("left")
   const [responsiveFlexAlligment, setResponsiveFlexAlligment] = useState("flex-start")
@@ -32,15 +38,15 @@ export default function MainComponent() {
     <Main align={responsiveFlexAlligment} ref={target}>
 
       <Heading1 wide='58rem' color='white' align={responsiveAlligment}>
-        Profesjonalna obsługa księgowa <span>firm</span> i osób prywatnych
+        {translations.heading_1}<span>{translations.heading_2}</span>{translations.heading_3}
       </Heading1>
 
       <Text color='#ebedeb' align={responsiveAlligment} margin='1.4rem 0'>
-        Nasze biuro rachunkowe gwarantuje kompleksową i profesjonalną obsługę księgową firm na terenie <span>Polski</span>, <span>Niemiec</span>, <span>Holandii</span> i <span>Belgii</span>. 
-        Naszym klientom zapewniamy obsługę zarówno w zakresie usług księgowych, jak również bogatą gamę usług doradztwa gospodarczego.
+        {translations.body_1}<span>{translations.country_1}</span>, <span>{translations.country_2}</span>, <span>{translations.country_3}</span> {locale==='en'?'and':'i'} <span>{translations.country_4}</span>. 
+        {translations.body_2}
       </Text>
 
-      <Buttons/>
+      <Buttons btn1={translations.btn_1} btn2={translations.btn_2}/>
 
     </Main>
   )

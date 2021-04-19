@@ -1,14 +1,18 @@
 import styled from "styled-components";
+import {useRouter} from 'next/router'
 import {fonts} from '../../styles'
-import {data} from '../../translations/pl/footer/copyright'
 
 export default function CopyrightComponent() {
+
+    const router = useRouter()
+    const {locale } = router
+
     return (
         <Copyright>
             <p>
                 &copy; {new Date().getFullYear()} Copyright{" "}
                 Online Podatki
-                {data.copyright}{" "}
+                {locale==='en'?"All rights reserved":" Wszelkie prawa zastrzeżone."}{" "}
                 Regon: 369571834, Becon: 663396. {" "}
                 Designed by <a href="https://itcontext.nl">IT Context</a>
             </p>

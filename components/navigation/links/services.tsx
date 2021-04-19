@@ -1,16 +1,25 @@
 import {useState, useEffect} from 'react'
+import {useRouter} from 'next/router'
 import styled from 'styled-components'
 import Link from 'next/link'
 import {respond, fonts, ListItem, Line} from '../../../styles'
 import {BiChevronDown} from 'react-icons/bi'
 import {ListItemProps} from '../../../types'
 import {checkViewportWidth} from '../../../styles/utils'
+import en from '../../../translations/en/navigation'
+import pl from '../../../translations/pl/navigation'
 
 interface ServicesProps{
   isActive: (string)=>boolean
 }
 
 export default function ServicesItemComponent({isActive}:ServicesProps) {
+
+  const router = useRouter()
+
+  const {locale } = router
+
+  const translations = locale==='en'?en:pl
 
   const [isServicesOpen, setIsServicesOpen] = useState(false)
   const [isSmall, setIsSmall] = useState(false)
@@ -36,47 +45,33 @@ export default function ServicesItemComponent({isActive}:ServicesProps) {
   if(isSmall){
     return(
       <>
+
       <Line/>
       <Link href='/services'>
-        <ListItem>Usługi</ListItem>
+        <ListItem>{translations.services || "Usługi"}</ListItem>
       </Link>
-      {/* <Link href='/services/taxes'>
-        <ListItem>Rozliczenia Podatkowe</ListItem>
-      </Link>
-      <Link href='/services/benefits'>
-        <ListItem>Zasiłki </ListItem>
-      </Link>
-      <Link href='/services/subsidies'>
-        <ListItem>Dotacje</ListItem>
-      </Link>
-      <Link href='/services/administration'>
-        <ListItem>Administracja</ListItem>
-      </Link>
-      <Link href='/services/other'>
-        <ListItem>Pozostałe usługi</ListItem>
-      </Link>
-      <Line/> */}
+  
       </>
     )
   }else{
     return(
       <ServicesItem onClick={()=>setIsServicesOpen(prevState=>!prevState)} active={isActive('/services')}>
-        Usługi  <BiChevronDown/>
+        {translations.services || "Usługi"}  <BiChevronDown/>
         {isServicesOpen && <Group>
           <Link href='/services/taxes'>
-            <ListItemBottom>Rozliczenia Podatkowe</ListItemBottom>
+            <ListItemBottom>{translations.taxes || "Rozliczenia Podatkowe"}</ListItemBottom>
           </Link>
           <Link href='/services/benefits'>
-            <ListItemBottom>Zasiłki </ListItemBottom>
+            <ListItemBottom>{translations.benefits || "Zasiłki"} </ListItemBottom>
           </Link>
           <Link href='/services/subsidies'>
-            <ListItemBottom>Dotacje</ListItemBottom>
+            <ListItemBottom>{translations.subsidies || "Dotacje"}</ListItemBottom>
           </Link>
           <Link href='/services/administration'>
-            <ListItemBottom>Administracja</ListItemBottom>
+            <ListItemBottom>{translations.administration || "Administracja"}</ListItemBottom>
           </Link>
           <Link href='/services/other'>
-            <ListItemBottom>Pozostałe usługi</ListItemBottom>
+            <ListItemBottom>{translations.others || "Pozostałe usługi"}</ListItemBottom>
           </Link>
         </Group>}
       </ServicesItem>

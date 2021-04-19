@@ -1,34 +1,39 @@
 import styled from 'styled-components'
+import {useRouter} from 'next/router'
 import InfoBox from '../info_box'
 import {respond, SectionNarrow, FlexCol, Heading1} from '../../styles'
 import {IoMdTimer} from 'react-icons/io'
 import {IoRocketOutline} from 'react-icons/io5'
 import {AiOutlineBarChart} from 'react-icons/ai'
+import en from '../../translations/en/landing_page/boxes'
+import pl from '../../translations/pl/landing_page/boxes'
 
 export default function BoxesComopnent() {
 
+  const router = useRouter()
+  const {locale } = router
+  const translations = locale==='en'?en:pl
 
   return (
     <SectionNarrow margin='4.7rem auto'>
       <FlexCol>
-        <Heading1 align='center' margin='0 auto 2.7rem auto'>Co nas wyróżnia?</Heading1>
+        <Heading1 align='center' margin='0 auto 2.7rem auto'>{translations.heading_main}</Heading1>
         <Boxes>
           <InfoBox 
             animation="mx"
             icon={<IoMdTimer/>} 
-            heading='Oszczędność czasu' 
-            text='Jako przedsiębiorca chcesz robić to, w czym jesteś dobry in na czym zarabiasz. Księgowość to nie Twoja sprawa. Poświęcając jedynie kilka minut na kontakt z nami, możesz być pewien, że Twoja księgowość będzie prowadzona skrupulatnie i należycie.'/>
+            heading={translations.box1_heading} 
+            text={translations.box1_text} />
           <InfoBox
-            
             icon={<AiOutlineBarChart/>} 
             background='rgba(70, 141, 204, .3)'
-            heading='Efektywność' 
-            text='Dla naszych klientów uzyskujemy zawsze najwyższe świadczenia. Doradzamy firmom i klientom indywidualnym, jak korzystać z ulg podatkowych, aby zachować jak najlepszą kondycję finansową. Nie trać czasu, powierz sprawy specjalistom.'/>
+            heading={translations.box2_heading} 
+            text={translations.box2_text} />
           <InfoBox
             animation="px"
             icon={<IoRocketOutline/>} 
-            heading='Szybkość działania' 
-            text='Twoje sprawy są naszym pryiorytetem! Podejmujemy natychmiastowe działania, i reagujemy w sposób błyskawiczny, za każdym razem, kiedy nas potrzebujesz. Dzięki temu nie martwisz się niczym.'/>
+            heading={translations.box3_heading} 
+            text={translations.box3_text} />
         </Boxes>
       </FlexCol>
     </SectionNarrow>

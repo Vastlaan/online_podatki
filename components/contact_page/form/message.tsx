@@ -1,4 +1,5 @@
 import {Dispatch, SetStateAction} from 'react'
+import {useRouter} from 'next/router'
 import {Field} from '../../../styles'
 import {ErrorObject} from '../../../types'
 
@@ -10,9 +11,13 @@ interface MessageProps{
 
 
 export default function MessageComponent({message, setMessage, error}:MessageProps) {
+
+  const router = useRouter()
+  const {locale} = router
+
   return (
     <Field>
-      <label htmlFor="message">Wiadomość:</label>
+      <label htmlFor="message">{locale==='en'?"Message":"Wiadomość"}:</label>
       <textarea
           id="message"
           name="message"

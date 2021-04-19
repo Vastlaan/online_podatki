@@ -1,4 +1,5 @@
 import {useEffect, useRef} from 'react'
+import {useRouter} from 'next/router'
 import styled from 'styled-components'
 import Link from "next/link";
 import gsap from 'gsap'
@@ -32,6 +33,8 @@ interface IntersectionProps extends ThemeProps{
 function IntersectionComponent({ category, title, body, link, margin, icon, theme }: IntersectionProps) {
 
     const container = useRef()
+    const router = useRouter()
+    const {locale} = router
 
     useEffect(()=>{
 
@@ -62,7 +65,7 @@ function IntersectionComponent({ category, title, body, link, margin, icon, them
               {link && (
                   <Link href={link}>
                       <ButtonPrimary margin="1.4rem auto">
-                          Czytaj więcej
+                          {locale==='en'?'Read more':'Czytaj więcej'}
                       </ButtonPrimary>
                   </Link>
               )}

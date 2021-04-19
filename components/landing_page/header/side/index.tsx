@@ -1,14 +1,24 @@
 import {useEffect, useRef} from 'react'
+import {useRouter} from 'next/router'
 import gsap from 'gsap'
 import styled from 'styled-components'
 import Link from 'next/link'
-import {respond, ButtonPrimary, ButtonSecondary, Heading3, Text, FlexCol, Line, Item} from '../../../../styles'
-import { IoMdCall, IoIosMail } from "react-icons/io";
+import {respond, ButtonPrimary, ButtonSecondary, Text, FlexCol} from '../../../../styles'
+import { IoMdCall } from "react-icons/io";
 import {FiCheckSquare} from 'react-icons/fi'
+import en from '../../../../translations/en/landing_page/header/side'
+import pl from '../../../../translations/pl/landing_page/header/side'
+
 
 export default function SideComponent() {
 
   const target = useRef()
+
+  const router = useRouter()
+
+  const {locale } = router
+
+  const translations = locale==='en'?en:pl
 
   useEffect(()=>{
     gsap.to(target.current, {autoAlpha: 1, x: 0, duration: .6} )
@@ -18,28 +28,25 @@ export default function SideComponent() {
       <FlexCol>
         
         <HiddenOnMobile>
-          {/* <Heading3 color='white'>
-            Nasze Usługi:
-          </Heading3> */}
 
           <List>
             <Link href='/services/taxes'>
-              <CustomItem> <FiCheckSquare/> Rozliczenia Podatkowe</CustomItem>
+              <CustomItem> <FiCheckSquare/>{translations.taxes}</CustomItem>
             </Link>
             <Link href='/services/administration'>
-              <CustomItem> <FiCheckSquare/> Administracja firm</CustomItem>
+              <CustomItem> <FiCheckSquare/>{translations.administration}</CustomItem>
             </Link>
             <Link href='/services/benefits'>
-              <CustomItem> <FiCheckSquare/> Pozyskiwanie zasiłków</CustomItem>
+              <CustomItem> <FiCheckSquare/>{translations.benefits}</CustomItem>
             </Link>
             <Link href='/services/subsidies'>
-              <CustomItem> <FiCheckSquare/> Pozyskiwanie dotacji</CustomItem>
+              <CustomItem> <FiCheckSquare/>{translations.subsidies}</CustomItem>
             </Link>
           </List>
         </HiddenOnMobile>
         
 
-        <Text margin='1.4rem auto' color='white'>Zadzwoń do nas!</Text>
+        <Text margin='1.4rem auto' color='white'>{translations.call}</Text>
 
         <ButtonPrimary >
           <IoMdCall/>

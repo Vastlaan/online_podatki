@@ -1,4 +1,5 @@
 import {useState} from 'react'
+import {useRouter} from 'next/router'
 import styled from 'styled-components'
 import Name from './name'
 import Email from './email'
@@ -10,6 +11,9 @@ import {validateAll} from '../../../validations'
 
 
 export default function FormComponent() {
+
+  const router = useRouter()
+  const {locale} = router
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -62,7 +66,7 @@ export default function FormComponent() {
   return (
     <SectionNarrow>
       <Form onSubmit={submitForm}>
-        <Heading4 margin='0 0 2.7rem 0'>Formularz kontaktowy</Heading4>
+        <Heading4 margin='0 0 2.7rem 0'>{locale==='en'?"Contact Form":"Formularz kontaktowy"}</Heading4>
 
         <Name name={name} setName={setName} error={error}/>
 
@@ -74,10 +78,10 @@ export default function FormComponent() {
 
         {error.field === "disclaimer" ? <small>{error.message}</small> : null}
 
-        <ButtonSecondary>Wyślij</ButtonSecondary>
+        <ButtonSecondary>{locale==='en'?"Submit":"Wyślij"}</ButtonSecondary>
 
       </Form>
-      {displayModal && <Modal message='Dziękujemy za wiadomość! Jeden z naszych kolegów wkrótce się z Tobą skontaktuje. Miłego dnia!'/>}
+      {displayModal && <Modal message={locale==='en'?"Thank you for your message! One of our colleagues will contact you as soon as possible. Have a nice day!":'Dziękujemy za wiadomość! Jeden z naszych kolegów wkrótce się z Tobą skontaktuje. Miłego dnia!'}/>}
     </SectionNarrow>
     
   )

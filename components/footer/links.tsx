@@ -1,19 +1,26 @@
 import Link from "next/link";
+import {useRouter} from 'next/router'
 import styled from "styled-components";
 import { respond, fonts, Heading6, Anchor, Line } from "../../styles";
 import {BsChevronRight} from 'react-icons/bs'
-import { data } from "../../translations/pl/footer/sections";
 import {MdEmail, MdPhone} from 'react-icons/md'
 import {RiMapPinFill} from 'react-icons/ri'
+import en from '../../translations/en/footer'
+import pl from '../../translations/en/footer'
 
 interface LinksProps{
     data: {header?: string; links: {name?: string; url?: string}}[];
 }
 
 export default function LinksComponent() {
+
+    const router = useRouter()
+    const {locale } = router
+    const translations = locale==='en'?en:pl
+
     return (
         <Links>
-            {data.map((section, i) => {
+            {translations.sections.map((section, i) => {
                 return (
                     <Items key={`${section}-${i}}`}>
                         <Heading6 align='left' color='white'  margin='0 0 1.4rem 0'>{section.header}</Heading6>
@@ -32,7 +39,7 @@ export default function LinksComponent() {
                 );
             })}
             <Items>
-                <Heading6 align='left' color='white' margin='0 0 1.4rem 0'>Kontakt</Heading6>
+                <Heading6 align='left' color='white' margin='0 0 1.4rem 0'>{locale==='en'?"Contact":"Kontakt"}</Heading6>
 
                 <Item>
                     <RiMapPinFill/>

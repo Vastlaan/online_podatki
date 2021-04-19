@@ -1,1 +1,0 @@
-export const data = {copyright: " Wszelkie prawa zastrzeżone."}

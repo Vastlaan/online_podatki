@@ -1,4 +1,5 @@
 import {useEffect, useRef} from 'react'
+import {useRouter} from 'next/router'
 import Link from 'next/link'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
@@ -18,6 +19,10 @@ export default function CardComponent({heading, price, text, link}:CardProps) {
 
   const target = useRef()
 
+  const router = useRouter()
+
+  const {locale} = router
+
   useEffect(()=>{
     gsap.registerPlugin(ScrollTrigger)
     gsap.to(target.current, {autoAlpha: 1, duration:1, scrollTrigger:{
@@ -31,10 +36,10 @@ export default function CardComponent({heading, price, text, link}:CardProps) {
     <Card ref={target}>
       <Heading3 padding='1.4rem'>{heading}</Heading3>
       
-      <Price><sub>od</sub>&nbsp; <p>&euro;{price}</p>&nbsp; <sup> brutto</sup></Price>
+      <Price><sub>{locale==='en'?"from":"od"}</sub>&nbsp; <p>&euro;{price}</p>&nbsp; <sup> {locale==='en'?"gross":"brutto"}</sup></Price>
       <Text padding='1.4rem'>{text}</Text>
       <Link href={link}>
-        <ButtonSecondary wide='100%'>Więcej <IoIosArrowRoundForward /></ButtonSecondary>
+        <ButtonSecondary wide='100%'>{locale==='en'?"More":"Więcej"} <IoIosArrowRoundForward /></ButtonSecondary>
       </Link>
       
     </Card>
@@ -43,7 +48,7 @@ export default function CardComponent({heading, price, text, link}:CardProps) {
 
 const Card = styled.div`
   width: 30rem;
-  padding: 2.7rem 0 0 0;
+  padding: 1.4rem 0 0 0;
   display: flex;
   flex-direction: column;
   align-items: center;

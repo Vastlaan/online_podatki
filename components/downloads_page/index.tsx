@@ -1,22 +1,30 @@
+import {useRouter} from 'next/router'
 import Header from '../header'
 import Intersection from '../intersection'
 import Documents from './documents'
 import {FaDownload} from 'react-icons/fa'
+import pl from '../../translations/pl/download_page'
+import en from '../../translations/en/download_page'
 
 export default function Downloads() {
+
+  const router = useRouter()
+  const {locale} = router
+  const translations = locale==='en'?en:pl
+
   return (
     <>
       <Header 
-        title='Formularze, dokumenty'
-        body='Tutaj znajdziesz najważniejsze formularze do pobrania w formacie pdf'
+        title={translations.header_title}
+        body={translations.header_body}
         imageUrl='/img/header-downloads.jpg'
       />
 
       <Intersection
 
-        category=''
-        title='Dokumenty do pobrania'
-        body='Tutaj znajdziesz aktualne formularze i ważne dokumenty w wersji gotowej do druku.'
+        category={translations.intersection_category}
+        title={translations.intersection_title}
+        body={translations.intersection_body}
         margin='0 auto 0 auto'
         icon={<FaDownload/>}
       />

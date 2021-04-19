@@ -1,10 +1,12 @@
 import {useRouter} from 'next/router';
+import Image from 'next/image'
 import styled from 'styled-components'
 import Link from 'next/link'
 import Services from './services'
-import {respond, fonts, ListItem, ButtonSecondary} from '../../../styles'
+import {respond, fonts, ListItem, ButtonSecondarySmall} from '../../../styles'
 import {MdPhone} from 'react-icons/md'
-import {ListItemProps} from '../../../types'
+import en from '../../../translations/en/navigation'
+import pl from '../../../translations/pl/navigation'
 
 
 
@@ -16,6 +18,10 @@ export default function LinksComponent({isOpen}:LinksProps) {
 
   const router = useRouter()
 
+  const {locale, asPath } = router
+
+  const translations = locale==='en'?en:pl
+
   function isActive(href:string){
     if(router.asPath === href || router.asPath === `/en${router.asPath}`){
       return true
@@ -26,25 +32,40 @@ export default function LinksComponent({isOpen}:LinksProps) {
   return (
     <Links isOpen={isOpen}>
       <Link href='/'>
-        <ListItem active={isActive('/')}>Strona Główna</ListItem>
+        <ListItem active={isActive('/')}>{translations.home || "Strona Główna"}</ListItem>
       </Link>
 
       <Services isActive={isActive}/>
 
       <Link href='/news'>
-        <ListItem active={isActive('/news')}>Aktualności</ListItem>
+        <ListItem active={isActive('/news')}>{translations.news || "Aktualności"}</ListItem>
       </Link>
       <Link href='/downloads'>
-        <ListItem active={isActive('/downloads')}>Do pobrania</ListItem>
+        <ListItem active={isActive('/downloads')}>{translations.downloads || "Do pobrania"}</ListItem>
       </Link>
       <Link href='/contact'>
-        <ListItem active={isActive('/contact')}>Kontakt</ListItem>
+        <ListItem active={isActive('/contact')}>{translations.contact || "Kontakt"}</ListItem>
       </Link>
+      {locale==='pl'?
+        <Link href={asPath} locale="en">
+          <Flag>
+            <Image src='/img/united-kingdom-flag.svg' alt='united kingdom flag' width='35' height='35'/>
+          </Flag>
+        </Link> 
+        :
+        <Link href={asPath} locale="pl">
+          <Flag>
+            <Image src='/img/poland-flag.svg' alt='poland flag' width='35' height='35'/>
+          </Flag>
+        </Link>
+      }
+       
+       
       <a href='tel:0031630159193'>
-        <ButtonSecondary>
+        <ButtonSecondarySmall>
           <MdPhone/>
           +31 630 159 193
-        </ButtonSecondary>
+        </ButtonSecondarySmall>
       </a>
     </Links>
   )
@@ -75,4 +96,14 @@ const Links = styled.ul<LinksProps>`
   justify-content: flex-end;
 
   `)}
+`
+
+const Flag = styled.li`
+  margin-right: 1.4rem;
+  cursor: pointer;
+  transition: all .3s;
+
+  &:hover{
+    transform: scale(1.05);
+  }
 `

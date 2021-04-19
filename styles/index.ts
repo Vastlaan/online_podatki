@@ -11,7 +11,7 @@ import {List, Item, ListItem, Anchor, Field} from './components'
 // TYPOGRAPHY
 import {Company,HeadingHuge, Heading1, Heading3, Heading4, Heading6, TextItalic, Text3, Text} from './typography'
 // BUTTONS
-import {ButtonEmpty,ButtonEmptyReverse,ButtonEmptyReverseDark, ButtonPrimary, ButtonSecondary} from './buttons' 
+import {ButtonEmpty,ButtonEmptyReverse,ButtonEmptyReverseDark, ButtonPrimary, ButtonSecondary, ButtonSecondarySmall} from './buttons' 
 // DECORATIONS
 import {Line, Icon} from './decorations' 
 
@@ -29,7 +29,7 @@ export {
   // TYPOGRAPHY
   Company,HeadingHuge,  Heading1, Heading3, Heading4, Heading6, Text, Text3, TextItalic,
   // BUTTONS
-  ButtonPrimary,ButtonEmptyReverse,ButtonEmptyReverseDark, ButtonSecondary,ButtonEmpty,
+  ButtonPrimary,ButtonEmptyReverse,ButtonEmptyReverseDark, ButtonSecondary,ButtonEmpty,ButtonSecondarySmall,
   // DECORATIONS
   Line, Icon
 }
