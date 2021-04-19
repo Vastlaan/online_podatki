@@ -7,7 +7,10 @@ export default function CopyrightComponent() {
         <Copyright>
             <p>
                 &copy; {new Date().getFullYear()} Copyright{" "}
-                <a href="https://itcontext.nl">IT Context</a> {data.copyright}
+                Online Podatki
+                {data.copyright}{" "}
+                Regon: 369571834, Becon: 663396. {" "}
+                Designed by <a href="https://itcontext.nl">IT Context</a>
             </p>
         </Copyright>
     );
@@ -24,6 +27,7 @@ const Copyright = styled.div`
         font-weight: 300;
         font-family: ${fonts.heading};
         color: ${(p) => p.theme.white};
+        text-align: center;
         a {
             padding: .6rem .9rem;
             background-color: ${p=>p.theme.secondary};

@@ -39,8 +39,8 @@ export const Header = styled.header<FlexibleComponentProps>`
     min-height: 30vh;
     background-image: linear-gradient(
             to bottom,
-            rgba(52, 104, 151, 0.9),
-            rgba(52, 104, 151, 0.6)
+            rgba(52, 104, 151, 0.7),
+            rgba(52, 104, 151, 0.5)
         ),
         url(${(p) => (p.url ? p.url==='none'?'':p.url : "./img/header-3.jpg")});
     background-size: cover;

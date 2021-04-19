@@ -7,7 +7,7 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import {respond, fonts} from '../../styles'
 
-export default function Personel({article, animation}) {
+export default function ArticleShort({article, animation}) {
 
   const target = useRef()
 

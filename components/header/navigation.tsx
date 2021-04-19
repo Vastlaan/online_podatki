@@ -18,9 +18,15 @@ export default function NavigationComponent() {
                         <Path>home</Path>
                     </Link>
                 )
-            }else{
+            }else if(i===1){
                 return(
                     <Link href={`/${path}`} key={i}>
+                        <Path><BsChevronRight/>{path}</Path>
+                    </Link>
+                )
+            }else{
+                return(
+                    <Link href={`/${pathArray[1]}/${pathArray[2]}`} key={i}>
                         <Path><BsChevronRight/>{path}</Path>
                     </Link>
                 )

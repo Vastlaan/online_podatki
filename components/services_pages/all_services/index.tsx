@@ -113,7 +113,7 @@ const Project = styled.div`
   margin: 1.4rem;
   padding: 1.4rem;
   transition: all .3s;
-  box-shadow: 0 0 2rem rgba(0,0,0,.6);
+  box-shadow: 0 0 1rem rgba(0,0,0,.3);
   cursor: pointer;
 
   ${()=>respond('m','width: 28rem;')}
@@ -137,7 +137,7 @@ const Project = styled.div`
     transition: all .3s;
   }
   &:hover{
-    box-shadow: 0 0 1rem rgba(0,0,0,.3);
+    box-shadow: 0 0 .5rem rgba(0,0,0,.2);
     h3{
       margin-top: 1.4rem;
     }

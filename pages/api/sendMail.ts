@@ -19,7 +19,7 @@ export default async function handler(req, res){
 
 
     const msg = {
-        to: [email, "info@michalantczak.com"],
+        to: [email, "info@onlinepodatki.eu"],
         from: "no-reply@onlinepodatki.eu",
         subject: "Potwierdzenie wysłania formularza",
         html: `

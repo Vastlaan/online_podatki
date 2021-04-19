@@ -1,1 +1,1 @@
-export const data = {copyright: " Alle rechten voorbehouden."}
+export const data = {copyright: " Wszelkie prawa zastrzeżone."}
