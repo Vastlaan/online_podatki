@@ -25,11 +25,11 @@ export default async function handler(req, res){
         html: `
           <div style=" padding: 10px;">
             <h1
-              style="font-family: sans-serif; font-size: 27px; letter-spacing: -1px; font-weight: 600; line-height: 0; color: #222; text-shadow: 3px 3px 3px rgba(0,0,0,.3);">
+              style="font-family: sans-serif; font-size: 27px; letter-spacing: -1px; font-weight: 600; line-height: 1.2; color: #222; text-shadow: 3px 3px 3px rgba(0,0,0,.3);">
               <span style="color: #346897">Online</span>Podatki
             </h1>
             <h2
-              style=" font-family: sans-serif; font-size: 16px; letter-spacing: -1px; font-weight: 400; line-height: .5; color: #222; text-shadow: 3px 3px 3px rgba(0,0,0,.3);">
+              style=" font-family: sans-serif; font-size: 16px; letter-spacing: -1px; font-weight: 400; line-height: 1; color: #222; text-shadow: 3px 3px 3px rgba(0,0,0,.3);">
               Załatwisz swoje sprawy online
             </h2>
           </div>
