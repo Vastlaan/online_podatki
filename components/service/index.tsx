@@ -1,9 +1,12 @@
 import styled from 'styled-components'
+import {useRouter} from 'next/router'
 import Intersection from '../intersection'
 import Details from '../contact_page/details'
 import { SectionNarrow, FlexCol, Heading1, Text, List} from '../../styles'
 import {GiCheckMark} from 'react-icons/gi'
 import {IoIosContacts} from 'react-icons/io'
+import pl from '../../translations/pl/services_page'
+import en from '../../translations/en/services_page'
 
 interface ServiceProps{
   title?: string;
@@ -16,6 +19,11 @@ interface ImageBoxProps{
 }
 
 export default function ServiceComponent({title, body, imageUrl, features}:ServiceProps) {
+
+  const router = useRouter()
+  const {locale} = router
+  const translations = locale==='en'?en:pl
+
   return (
     <SectionNarrow>
       <FlexCol align='flex-start' margin='0 0 2.7rem 0'>
@@ -41,9 +49,9 @@ export default function ServiceComponent({title, body, imageUrl, features}:Servi
 
       <Intersection
 
-        category=''
-        title='Umów się na spotkanie!'
-        body='Nawiąż kontakt z jednym z naszych pracowników.'
+        category={translations.intersection_category}
+        title={translations.intersection_title}
+        body={translations.intersection_body}
         margin='0 auto 0 auto'
         icon={<IoIosContacts/>}
       />

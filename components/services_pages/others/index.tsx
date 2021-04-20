@@ -1,41 +1,38 @@
+import {useRouter} from 'next/router'
 import Header from '../../header'
 import Intersection from '../../intersection'
 import Service from '../../service'
 import {RiMoneyEuroCircleLine} from 'react-icons/ri'
+import pl from '../../../translations/pl/services_page/others'
+import en from '../../../translations/en/services_page/others'
 
 export default function TaxesComponent() {
+
+
+  const router = useRouter()
+  const {locale} = router
+  const translations = locale==='en'?en:pl
+
   return (
     <>
       <Header 
-        title='Pozostałe usługi' 
-        body=' Oferujemy szeroki wahlarz usług w załatwianiu codziennych spraw.' 
+        title={translations.header_title} 
+        body={translations.header_body}   
         imageUrl='/img/header-benefits.jpg' 
       />
       <Intersection
 
-        category=''
-        title='Pomoc w meldunku i ubezpieczenie'
-        body='Online Podatki pomaga w załatwianiu spraw związanych z życiem w Holandii, Belgii, Niemczech i Polsce.'
+        category={translations.intersection_category} 
+        title={translations.intersection_title} 
+        body={translations.intersection_body}
         margin='0 auto 0 auto'
         icon={<RiMoneyEuroCircleLine/>}
       />
 
       <Service
-        title='Numer BSN, meldunek, DigiD w Holandii' 
-        body={`Aby rozpocząć życie w Holandii dobrze jest zadbać o sprawy podstawowe, takie jak zameldowanie czy numer BSN. 
-        Online Podatki pomaga w załatwianiu spraw związanych z życiem w Holandii, Belgii, Niemczech i Polsce. 
-        Oferujemy szeroki wahlarz usług w załatwianiu codziennych spraw.`}
-        features={[
-          'Pomoc w meldunku',
-          'Złożenie wniosku o ubezpieczenie zdrowotne',
-          'Złożenie wniosku o ubezpieczenie auta',
-          'Zapisywanie na mieszkania socjalne',
-          'Umawaianie spotkań i pomoc na wyrobieniu numeru BSN',
-          'Pomoc na wyrobieniu DigiD',
-          'Rejestracja auta na polskich tablicach',
-          'Pomoc w zajerestrowaniu auta kupionego w Holandii',
-          'Wystąpienie o formularze E301, E106, IB60'
-        ]} 
+        title={translations.services_title}  
+        body={translations.services_body} 
+        features={translations.service_features} 
         imageUrl='/img/header-taxes.jpg' 
       />
     </>

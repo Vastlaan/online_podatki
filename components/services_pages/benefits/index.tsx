@@ -1,41 +1,37 @@
+import {useRouter} from 'next/router'
 import Header from '../../header'
 import Intersection from '../../intersection'
 import Service from '../../service'
 import {RiMoneyEuroCircleLine} from 'react-icons/ri'
+import pl from '../../../translations/pl/services_page/benefits'
+import en from '../../../translations/en/services_page/benefits'
 
 export default function TaxesComponent() {
+
+  const router = useRouter()
+  const {locale} = router
+  const translations = locale==='en'?en:pl
+
   return (
     <>
       <Header 
-        title='Zasiłki Socjalne' 
-        body='Pomagamy w uzyskaniu jak największych świadczeń, reprezentujemy klientów w kontaktach z placówkami, doradzamy i służymy pomocą językową.' 
+        title={translations.header_title} 
+        body={translations.header_body}   
         imageUrl='/img/header-benefits.jpg' 
       />
       <Intersection
 
-        category=''
-        title='Pomoc finansowa'
-        body='Dzięki naszej kompetencji możesz uzykać większe świadczenia socjalne w przypadku choroby bezrobocia lub braku dochodów'
+        category={translations.intersection_category} 
+        title={translations.intersection_title} 
+        body={translations.intersection_body} 
         margin='0 auto 0 auto'
         icon={<RiMoneyEuroCircleLine/>}
       />
 
       <Service
-        title='Zasiłki socjalne' 
-        body={`Każdy Polak, który jest zatrudniony i mieszka legalnie w Holandii przez okres powyżej 3 miesięcy,
-         nabywa prawa do wnioskowania o dodatki socjalne, natomiast po 5 latach mieszkania w kraju nabywa wszelkie prawa do występowania
-        o dodatki przewidziane przez państwo, na równi z rodowitymi Holendrami. Holandia bardzo dba o swoich obywateli,
-        oferuje szeroki zakres dofinansowań socjalnych dla bezrobotnych, kobiet w ciąży, zasiłków rodzinnych,
-        dodatków dla kobiet przebywających na urlopach macierzyńskich, zasiłków na dzieci, a także ulg dla osób, które ponoszą koszty ubezpieczenia zdrowotnego.
-        Pomagamy w uzyskaniu świadczeń IOAW, IOAZ, AOW, Anw, Wajong, WW, WIA, WAO, ZW i TW`}
-        features={[
-          'Zasiłek dla bezrobotnych (również dla niezameldowanych)',
-          'Zasiłek macierzyński (również dla niezameldowanych)',
-          'Zasiłek rodzinny (również dla niezameldowanych)',
-          'Zasiłek chorobowy',
-          'Pomoc w załatwianiu dodatku do utraconych godzin',
-          'Transfer zasiłku'
-        ]} 
+        title={translations.services_title}  
+        body={translations.services_body} 
+        features={translations.service_features} 
         imageUrl='/img/image-benefits.jpg' 
       />
     </>

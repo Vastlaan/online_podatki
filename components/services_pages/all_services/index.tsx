@@ -1,27 +1,33 @@
 import {useState} from 'react'
+import {useRouter} from 'next/router'
 import Link from 'next/link'
 import styled from 'styled-components'
 import {SectionNarrow, FlexRow, fonts, respond} from '../../../styles'
-import { categories, projects } from "./data"
+import pl from '../../../translations/pl/services_page/all_services'
+import en from '../../../translations/en/services_page/all_services'
 
 
 
 export default function PortfolioComponent() {
+
+  const router = useRouter()
+  const {locale} = router
+  const translations = locale==='en'?en:pl
 
   const [type, setType] = useState("")
 
   return (
     <SectionNarrow>
       <FlexRow margin='2.7rem 1.4rem' wrap='wrap'>
-        <Cat onClick={()=>setType("")}>Wszystkie</Cat>
-        {categories.map(cat=>{
+        <Cat onClick={()=>setType("")}>{locale==='en'?"All":"Wszystkie"}</Cat>
+        {translations.categories.map(cat=>{
           return(
             <Cat onClick={()=>setType(cat.type)} key={`${cat.display}-${cat.type}`}>{cat.display}</Cat>
           )
         })}
       </FlexRow>
       <Projects>
-        {projects.map(project=>{
+        {translations.services.map(project=>{
           
           if(!type || project.category===type){
             return(

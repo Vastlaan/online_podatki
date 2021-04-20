@@ -1,14 +1,20 @@
+import {useRouter} from 'next/router'
 import Header from '../header'
-import Intersection from '../intersection'
 import AllServices from './all_services'
-import {RiMoneyEuroCircleLine} from 'react-icons/ri'
+import pl from '../../translations/pl/services_page'
+import en from '../../translations/en/services_page'
 
 export default function TaxesComponent() {
+
+  const router = useRouter()
+  const {locale} = router
+  const translations = locale==='en'?en:pl
+
   return (
     <>
       <Header 
-        title='Usługi Online Podatki' 
-        body='Zapoznaj się z szerokim zakresem oferowanych usług' 
+        title={translations.header_title} 
+        body={translations.header_body}
         imageUrl='/img/header-taxes.jpg' 
       />
 

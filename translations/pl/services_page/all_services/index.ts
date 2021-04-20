@@ -1,29 +1,7 @@
-export const categories = [
+export default {
+  services: [
     {
-        id: 1,
-        type: 'benefits',
-        display: 'Zasiłki'
-    },
-    {
-        id: 2,
-        type: 'subsidies',
-        display: 'Dotacje'
-    },
-    {
-        id: 3,
-        type: 'administration',
-        display: 'Administracja'
-    },
-    {
-        id: 4,
-        type: 'taxes',
-        display: 'Podatki'
-    }
-];
-
-export const projects = [
-    {
-        name: 'Zasiki socjalne Holandia',
+        name: 'Zasiłki socjalne Holandia',
         description: 'Pomagamy w uzyskaniu jak największych świadczeń socjalnych na terenie Holandii.',
         category: 'benefits',
         img: '/img/header-benefits.jpg',
@@ -85,4 +63,27 @@ export const projects = [
         img: '/img/header-3.jpg',
         id: Math.floor(Math.random() * 1000000).toFixed(0)
     }
-];
+  ],
+  categories: [
+     {
+        id: 1,
+        type: 'benefits',
+        display: 'Zasiłki'
+    },
+    {
+        id: 2,
+        type: 'subsidies',
+        display: 'Dotacje'
+    },
+    {
+        id: 3,
+        type: 'administration',
+        display: 'Administracja'
+    },
+    {
+        id: 4,
+        type: 'taxes',
+        display: 'Podatki'
+    }
+  ]
+}

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import {useRouter} from 'next/router'
 import Image from 'next/image'
 import styled from "styled-components";
 import {
@@ -12,6 +13,10 @@ import {
 } from "../../../styles";
 
 export default function AllNewsComponent({ data }) {
+
+  const router = useRouter()
+
+  const {locale} = router
 
     return (
         <SectionNarrow>
@@ -41,7 +46,7 @@ export default function AllNewsComponent({ data }) {
                                 <Link
                                     href={`/news/${article.id}`}
                                 >
-                                    <ButtonSecondary>Czytaj</ButtonSecondary>
+                                    <ButtonSecondary>{locale==='en'?"Read":"Czytaj"}</ButtonSecondary>
                                 </Link>
                             </Main>
                             </Link>

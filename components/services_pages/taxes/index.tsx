@@ -1,41 +1,37 @@
+import {useRouter} from 'next/router'
 import Header from '../../header'
 import Intersection from '../../intersection'
 import Service from '../../service'
 import {RiMoneyEuroCircleLine} from 'react-icons/ri'
+import pl from '../../../translations/pl/services_page/taxes'
+import en from '../../../translations/en/services_page/taxes'
 
 export default function TaxesComponent() {
+
+  const router = useRouter()
+  const {locale} = router
+  const translations = locale==='en'?en:pl
+
   return (
     <>
       <Header 
-        title='Rozliczenia podatków Holandia, Belgia, Niemcy i Polska' 
-        body='Rozliczenia należnych zobowiązań podatkowych wobec Urzędów Skarbowych. Sprawdź czy należy Ci się zwrot podatku w Holandii, Belgii. Rozlicz się z podatku w Niemczech i Polsce.' 
+        title={translations.header_title} 
+        body={translations.header_body}
         imageUrl='/img/header-taxes.jpg' 
       />
       <Intersection
 
-        category=''
-        title='Rozliczenia Podatków'
-        body='Oferujemy pomoc w uregulowaniu bieżących i zaległych zobowiązań formalnych i podatkowych.'
+        category={translations.intersection_category} 
+        title={translations.intersection_title} 
+        body={translations.intersection_body}
         margin='0 auto 0 auto'
         icon={<RiMoneyEuroCircleLine/>}
       />
 
       <Service
-        title='Rozliczenia podatków Holandia, Belgia, Niemcy i Polska' 
-        body={`Rozliczenie podatku dochodowego przed  urzędem jeszcze kilka lat temu było prostsze i szybsze,
-         wystarczyło posiadać dokumenty od pracodawcy. 
-         Jednak w ostatnich latach urzędy skarbowe wprowadziły kilka zmian umożliwiających dokładniejszą analizę każdego złożonego wniosku. 
-         Niestety konsekwencją tych zmian jest konieczność posiadania dodatkowych dokumentów oraz 
-         w wielu przypadkach również dłuższy czas oczekiwania na wypłatę należnych podatnikowi środków.
-         Dlatego my pomagamy w trudnych sytuacjach, reprezentujemy klientów w kontaktach z placówkami, doradzamy i służymy pomocą językową.`}
-        features={[
-          'Rozliczenia podatkowe Holdandia',
-          'Rozliczenia podatkowe Belgia',
-          'Rozliczenia podatkowe Niemcy',
-          'Rozliczenia podatkowe Polska',
-          'Rozliczenia podatkowe z partnerem',
-          'Rozliczenia podatkowe z hipoteką',
-        ]} 
+        title={translations.services_title}  
+        body={translations.services_body} 
+        features={translations.service_features} 
         imageUrl='/img/image-taxes.jpg' 
       />
     </>
