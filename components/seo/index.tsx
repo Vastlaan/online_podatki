@@ -1,4 +1,7 @@
 import Head from "next/head";
+import {useRouter} from 'next/router'
+import en from '../../translations/en/head'
+import pl from '../../translations/pl/head'
 
 interface SeoProps{
   host?: string;
@@ -17,8 +20,10 @@ export default function SeoComponent({
     logo,
     image
 }:SeoProps) {
-
-    let defaultHost = 'https://onlinepodatki.eu/'
+    
+    const router = useRouter()
+    const {locale} = router
+    const translations = locale==='en'?en:pl
 
     return (
         <Head>
@@ -26,21 +31,18 @@ export default function SeoComponent({
                 name="viewport"
                 content="width=device-width, initial-scale=1"
             />
-            <title>{title || "Online Podatki - nowoczesna księgowość"}</title>
+            <title>{title || translations.title}</title>
             <meta
                 name="description"
                 content={
                     description ||
-                    `Online Podatki to nowoczesna księgowość dla firm i osób prywatnych. 
-                    W naszej szerokiej gamie usług oferujemy m.in: rozliczenia podatków Holandia, rozliczenia podatków Niemcy, Belgia, Polska. 
-                    Świadczenia socjalne Holandia, Świadczenia socjalne Polska, Niemcy, Belgia. Dotacje Holandia, subsydia Holandia. 
-                    Administracja firm w Holandii, Polsce, Beligii i w Niemczech.`
+                    translations.description
                 }
                 data-react-helmet="true"
             />
             <link rel="apple-touch-icon" href={logo || "/logo192.png"} />
 
-            <link rel="cannonical" href={host || defaultHost || "https://onliepodatki.eu/"} />
+            <link rel="cannonical" href={host || translations.host} />
 
             <meta name="robots" content={robots || "index, follow"} />
 
@@ -48,17 +50,14 @@ export default function SeoComponent({
 
             <meta
                 property="og:title"
-                content={title || "Online Podatki - nowoczesna księgowość"}
+                content={title || translations.title}
             />
 
             <meta
                 property="og:description"
                 content={
                     description ||
-                    `Online Podatki to nowoczesna księgowość dla firm i osób prywatnych. 
-                    W naszej szerokiej gamie usług oferujemy m.in: rozliczenia podatków Holandia, rozliczenia podatków Niemcy, Belgia, Polska. 
-                    Świadczenia socjalne Holandia, Świadczenia socjalne Polska, Niemcy, Belgia. Dotacje Holandia, subsydia Holandia. 
-                    Administracja firm w Holandii, Polsce, Beligii i w Niemczech.`
+                    translations.description
                 }
             />
 
@@ -69,12 +68,12 @@ export default function SeoComponent({
 
             <meta
                 property="og:url"
-                content={host ||  defaultHost || "https://onlinepodatki.eu/"}
+                content={host || translations.host}
             />
 
             <meta
                 property="og:site_name"
-                content={title || "Online Podatki - nowoczesna księgowość"}
+                content={title || translations.title}
             />
         </Head>
     );
