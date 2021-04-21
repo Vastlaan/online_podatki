@@ -6,7 +6,7 @@ import {BsChevronRight} from 'react-icons/bs'
 import {MdEmail, MdPhone} from 'react-icons/md'
 import {RiMapPinFill} from 'react-icons/ri'
 import en from '../../translations/en/footer'
-import pl from '../../translations/en/footer'
+import pl from '../../translations/pl/footer'
 
 interface LinksProps{
     data: {header?: string; links: {name?: string; url?: string}}[];

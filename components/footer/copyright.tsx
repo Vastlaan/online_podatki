@@ -12,7 +12,7 @@ export default function CopyrightComponent() {
             <p>
                 &copy; {new Date().getFullYear()} Copyright{" "}
                 Online Podatki
-                {locale==='en'?"All rights reserved":" Wszelkie prawa zastrzeżone."}{" "}
+                {locale==='en'?" All rights reserved":" Wszelkie prawa zastrzeżone."}{" "}
                 Regon: 369571834, Becon: 663396. {" "}
                 Designed by <a href="https://itcontext.nl">IT Context</a>
             </p>

@@ -48,7 +48,7 @@ export default {sections: [
                 },
                 {
                   name: "Sitemap",
-                  url: "/sitemap.xml",
+                  url: "/sitemap",
                 },
 
             ],
